@@ -12,7 +12,13 @@ We have identified and opportunity to provide both drivers and riders of the cas
 **WHY</H3>**
 >There are current apps in the market that cater to the car pooling community but they are by in large not free and don’t really address the ideal of creating community within interest groups. The integration of social media such as Facebook and location services such as Google Maps offers an opportunity to make the carpooling experience an enjoyable and social experience where people of like mind commune while traveling together. 
 
+>We can attract a larger demographic of people with this app because it will remain free to the user and because we are tapping into an existing pool of users. The opportunity to create a profitable outcome with this application will come from from the data that users are providing in regard to their musical preferences and more. This data can give providers an exeptional opportunity to target users for goods and services that are certain to make an impact. After all the users will be telling us what they like. The opportunities generated for advertising concerts, musical events, venues and cultural events are very real. Providers could in theory start to offer goods and services to our particular demographic groups and offer incentives to them if they participate as a group and get perks and discunts for such events while ttending them as a group.
+
+>On the other hand we could offer an no advertising version of our app for anyone who is willing to pay a small monthly fee. 
+
 >Another aspect that is often overlooked while utilizing the casual carpool is the fact that people don’t know who they are riding with. Anonymity can be a factor for creating a bit of anxiety and a rather aloof and cold environment. Negative aspects of riding in an anonymous environment can be tolerated when rides are short and when the presence of multiple riders can help neutralize an unpleasant input. On the other hand, when rides are long and when a particular person is inconsiderate or rude, this can be a troublesome predicament.
+
+>Our app will provide a rating system that keeps riders polite and considerate with each other and promotes accountability within the pooling community. People have demonstrated that status and a positive perception of themselves to others in a community is the best way to mantain integrity and a healthy environment. Anyone who is negative or disruptive can in essence cancel themselves out of the community because their ratings will reflect it so. 
 
 **TECHNOLOGIES</H3>**
 >Spotify, Google Maps, Axios, OMDB, Spotify, (enter whatever else we might be using)
