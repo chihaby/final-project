@@ -44,9 +44,9 @@ class Drivers extends Component {
         event.preventDefault();
         if (this.state.firstName && this.state.lastName) {
         API.saveDriver({
-            title: this.state.firstName,
-            author: this.state.lastName,
-            synopsis: this.state.hobby
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            hobby: this.state.hobby
         })
             .then(res => this.loadDrivers())
             .catch(err => console.log(err));
