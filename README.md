@@ -21,6 +21,6 @@ We have identified and opportunity to provide both drivers and riders of the cas
 >Our app will provide a rating system that keeps riders polite and considerate with each other and promotes accountability within the pooling community. People have demonstrated that status and a positive perception of themselves to others in a community is the best way to mantain integrity and a healthy environment. Anyone who is negative or disruptive can in essence cancel themselves out of the community because their ratings will reflect it so. 
 
 **TECHNOLOGIES</H3>**
->Spotify, Google Maps, Axios, OMDB, Spotify, (enter whatever else we might be using).
+>Spotify, Google Maps, Axios, OMDB, Spotify, (enter whatever else we might be using)
 
 
