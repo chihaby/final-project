@@ -86,6 +86,11 @@ class RidersList extends Component {
                             )}
                         </Col>
                     </Row>
+                    <Row>
+                    <Col size="md-2">
+                        <Link to="/">← Home</Link>
+                    </Col>
+                    </Row>
                 </Container>
                 )}
                 }

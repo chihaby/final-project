@@ -93,6 +93,11 @@ class Drivers extends Component {
                 </form>
             </Col>
             </Row>
+            <Row>
+            <Col size="md-2">
+                <Link to="/">← Home</Link>
+            </Col>
+            </Row>
         </Container>
         );
     }
