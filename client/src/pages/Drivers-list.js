@@ -61,7 +61,7 @@ class DriversList extends Component {
             return(
             <Container fluid>
                 <Row>
-                    <Col size="md-6 sm-12">
+                    <Col size="md-6-offset-3 sm-12 lg-12">
                         <Jumbotron>
                         <h1>Drivers List</h1>
                         </Jumbotron>

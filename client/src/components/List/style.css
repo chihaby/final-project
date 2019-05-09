@@ -4,9 +4,8 @@
   border-radius: 4px;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: #fc4a1a;
+  background-color: #f3e7e3;
   text-align: center;
-  margin-left: 25%;
 }
 
 .list-overflow-container ul {
