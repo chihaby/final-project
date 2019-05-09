@@ -72,7 +72,7 @@ class RidersList extends Component {
                                     <button className="like" onClick={()=> context.ridersLibrary.incrementLikes(rider._id)}><i className="fas fa-thumbs-up"></i>
                                     <span className="like-count">{(riders.find(search => search.id === rider._id)) ? riders.find(search => search.id === rider._id).likes : 0}</span>
                                     </button>
-                                    <Link to={"/riders/" + rider._id}>
+                                    <Link to={"/ridersList/" + rider._id}>
                                     <strong>
                                         {rider.firstName} - {rider.lastName}
                                     </strong>

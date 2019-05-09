@@ -22,8 +22,8 @@ function App() {
             <Route exact path="/" component={Welcome} />
             <Route exact path="/drivers" component={Drivers} />
             <Route exact path="/riders" component={Riders} />
-            <Route exact path="/driverProfile" component={DriverProfile} />
-            <Route exact path="/riderProfile" component={RiderProfile} />
+            <Route exact path="/driversList/:id" component={DriverProfile} />
+            <Route exact path="/ridersList/:id" component={RiderProfile} />
             <Route exact path="/driversList" component={DriversList} />
             <Route exact path="/ridersList" component={RidersList} />
             <Route component={NoMatch} />

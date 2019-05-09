@@ -72,7 +72,7 @@ class DriversList extends Component {
                                 <button className="like" onClick={()=> context.library.incrementLikes(driver._id)}><i className="fas fa-thumbs-up"></i>
                                 <span className="like-count">{(drivers.find(search => search.id === driver._id)) ? drivers.find(search => search.id === driver._id).likes : 0}</span>
                                 </button>
-                                <Link to={"/drivers/" + driver._id}>
+                                <Link to={"/driversList/" + driver._id}>
                                 <strong>
                                     {driver.firstName} - {driver.lastName}
                                 </strong>

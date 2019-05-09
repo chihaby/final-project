@@ -10,8 +10,7 @@ class DriverProfile extends Component {
     state = {
         driver: {}
     };
-    // When this component mounts, grab the book with the _id of this.props.match.params.id
-    // e.g. localhost:3000/books/599dcb67f0f16317844583fc
+    
     componentDidMount() {
         API.getDriver(this.props.match.params.id)
         .then(res => this.setState({ driver: res.data }))
@@ -42,7 +41,7 @@ class DriverProfile extends Component {
             <Row>
             <Col size="md-10 md-offset-1">
                 <article>
-                <h1>Synopsis</h1>
+                <h1>Hobbies</h1>
                 <p>
                     {this.state.driver.hobby}
                 </p>
