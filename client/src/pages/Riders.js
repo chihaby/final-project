@@ -48,7 +48,10 @@ class Riders extends Component {
             lastName: this.state.lastName,
             hobby: this.state.hobby
         })
-            .then(res => this.loadRiders())
+            .then(res => this.loadRiders(),
+            this.props.history.push('/ridersList')
+            //add loading giffy here
+            )
             .catch(err => console.log(err));
         }
     };

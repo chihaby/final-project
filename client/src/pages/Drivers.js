@@ -48,7 +48,10 @@ class Drivers extends Component {
             lastName: this.state.lastName,
             hobby: this.state.hobby
         })
-            .then(res => this.loadDrivers())
+            .then(res => this.loadDrivers(),
+            this.props.history.push('/driversList')
+            //add loading giffy here
+            )
             .catch(err => console.log(err));
         }
     };
