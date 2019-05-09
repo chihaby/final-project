@@ -43,10 +43,10 @@ class Riders extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         if (this.state.firstName && this.state.lastName) {
-        API.saveRiders({
-            title: this.state.firstName,
-            author: this.state.lastName,
-            synopsis: this.state.hobby
+        API.saveRider({
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            hobby: this.state.hobby
         })
             .then(res => this.loadRiders())
             .catch(err => console.log(err));

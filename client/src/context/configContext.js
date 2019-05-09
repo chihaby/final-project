@@ -37,7 +37,7 @@ class ConfigProvider extends Component {
             }
         },
 
-        ridersibrary: {
+        ridersLibrary: {
             riders: [],
             incrementLikes: (id) => {
                 const rider = (this.state.ridersLibrary.riders.find(search => search.id === id)) ? this.state.ridersLibrary.riders.findIndex(search => search.id === id) : null;
