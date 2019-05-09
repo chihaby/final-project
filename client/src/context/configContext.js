@@ -8,7 +8,7 @@ class ConfigProvider extends Component {
         library: {
             drivers: [],
             incrementLikes: (id) => {
-                const book = (this.state.library.drivers.find(search => search.id === id)) ? this.state.library.drivers.findIndex(search => search.id === id) : null;
+                const driver = (this.state.library.drivers.find(search => search.id === id)) ? this.state.library.drivers.findIndex(search => search.id === id) : null;
                 if (driver === null) {
                     const {drivers} = this.state.library;
                     drivers.push({
@@ -35,15 +35,49 @@ class ConfigProvider extends Component {
                     });
                 }
             }
-            //add incremetRiderLikes function
+        },
+
+        ridersibrary: {
+            riders: [],
+            incrementLikes: (id) => {
+                const rider = (this.state.library.riders.find(search => search.id === id)) ? this.state.ridersLibrary.riders.findIndex(search => search.id === id) : null;
+                if (rider === null) {
+                    const {riders} = this.state.ridersLibrary;
+                    riders.push({
+                        id,
+                        likes: 1
+                    });
+                    this.setState({
+                        riders
+                    });
+                } else {
+                    const newState = [
+                        ...this.state.ridersLibrary.riders.slice(0, rider),
+                        {
+                            id,
+                            likes: this.state.ridersLibrary.riders[rider].likes + 1
+                        },
+                        ...this.state.ridersLibrary.riders.slice(rider + 1)
+                    ];
+                    this.setState({
+                        ridersLibrary: {
+                            ...this.state.ridersLibrary,
+                            riders: newState
+                        }
+                    });
+                }
+            }
         }
+    
+
+
     };
 
     render() {
         return (
             <Provider
                 value={{
-                    library: this.state.library
+                    library: this.state.ridersLibrary
                 }}
             >
                 {this.props.children}
