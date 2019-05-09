@@ -10,15 +10,14 @@ class RiderProfile extends Component {
     state = {
         rider: {}
     };
-    // When this component mounts, grab the book with the _id of this.props.match.params.id
-    // e.g. localhost:3000/books/599dcb67f0f16317844583fc
+
     componentDidMount() {
         API.getRider(this.props.match.params.id)
         .then(res => this.setState({ rider: res.data }))
         .catch(err => console.log(err));
     }
 
-    getLikesForDriver(id, riders) {
+    getLikesForRider(id, riders) {
         const thisRider = riders.find(rider => rider.id === id);
         return (thisRider && thisRider.likes) || null;
     }
@@ -26,7 +25,7 @@ class RiderProfile extends Component {
     render() {
         return (
         <Consumer>{context => {
-            const totalLikes = this.getLikesForRider(this.state.rider._id, context.library.riders);
+            const totalLikes = this.getLikesForRider(this.state.rider._id, context.ridersLibrary.riders);
             return (
             <Container fluid>
             <Row>
@@ -42,7 +41,7 @@ class RiderProfile extends Component {
             <Row>
             <Col size="md-10 md-offset-1">
                 <article>
-                <h1>Synopsis</h1>
+                <h1>Hobbies</h1>
                 <p>
                     {this.state.rider.hobby}
                 </p>

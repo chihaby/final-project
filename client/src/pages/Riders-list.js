@@ -61,7 +61,7 @@ class RidersList extends Component {
                 return (
                 <Container fluid>
                     <Row>
-                    <Col size="md-6 sm-12">
+                    <Col size="md-6-offset-3 sm-12 lg-12">
                         <Jumbotron>
                             <h1>Riders List</h1>
                             </Jumbotron>
@@ -72,7 +72,7 @@ class RidersList extends Component {
                                     <button className="like" onClick={()=> context.ridersLibrary.incrementLikes(rider._id)}><i className="fas fa-thumbs-up"></i>
                                     <span className="like-count">{(riders.find(search => search.id === rider._id)) ? riders.find(search => search.id === rider._id).likes : 0}</span>
                                     </button>
-                                    <Link to={"/riders/" + rider._id}>
+                                    <Link to={"/ridersList/" + rider._id}>
                                     <strong>
                                         {rider.firstName} - {rider.lastName}
                                     </strong>
@@ -85,6 +85,11 @@ class RidersList extends Component {
                             <h3>No Results to Display</h3>
                             )}
                         </Col>
+                    </Row>
+                    <Row>
+                    <Col size="md-2">
+                        <Link to="/">← Home</Link>
+                    </Col>
                     </Row>
                 </Container>
                 )}

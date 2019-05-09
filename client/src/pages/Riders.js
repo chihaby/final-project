@@ -60,7 +60,7 @@ class Riders extends Component {
         return (
         <Container fluid>
             <Row>
-            <Col size="md-6" center>
+            <Col size="md-6-offset-3 sm-12 lg-12" >
                 <Jumbotron>
                 <h1>Rider Info</h1>
                 </Jumbotron>
@@ -90,6 +90,11 @@ class Riders extends Component {
                     Submit Rider Form
                 </FormBtn>
                 </form>
+            </Col>
+            </Row>
+            <Row>
+            <Col size="md-2">
+                <Link to="/">← Home</Link>
             </Col>
             </Row>
         </Container>

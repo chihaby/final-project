@@ -60,7 +60,7 @@ class Drivers extends Component {
         return (
         <Container fluid>
             <Row>
-            <Col size="md-6" >
+            <Col size="md-6-offset-3 sm-12 lg-12" >
             
                 <Jumbotron>
                 <h1>Driver Info</h1>
@@ -91,6 +91,11 @@ class Drivers extends Component {
                     Submit Driver Form
                 </FormBtn>
                 </form>
+            </Col>
+            </Row>
+            <Row>
+            <Col size="md-2">
+                <Link to="/">← Home</Link>
             </Col>
             </Row>
         </Container>

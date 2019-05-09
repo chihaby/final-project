@@ -61,7 +61,7 @@ class DriversList extends Component {
             return(
             <Container fluid>
                 <Row>
-                    <Col size="md-6 sm-12">
+                    <Col size="md-6-offset-3 sm-12 lg-12">
                         <Jumbotron>
                         <h1>Drivers List</h1>
                         </Jumbotron>
@@ -72,7 +72,7 @@ class DriversList extends Component {
                                 <button className="like" onClick={()=> context.library.incrementLikes(driver._id)}><i className="fas fa-thumbs-up"></i>
                                 <span className="like-count">{(drivers.find(search => search.id === driver._id)) ? drivers.find(search => search.id === driver._id).likes : 0}</span>
                                 </button>
-                                <Link to={"/drivers/" + driver._id}>
+                                <Link to={"/driversList/" + driver._id}>
                                 <strong>
                                     {driver.firstName} - {driver.lastName}
                                 </strong>
@@ -85,6 +85,11 @@ class DriversList extends Component {
                         <h3>No Results to Display</h3>
                         )}
                     </Col>
+                </Row>
+                <Row>
+                <Col size="md-2">
+                    <Link to="/">← Home</Link>
+                </Col>
                 </Row>
             </Container>
             )}

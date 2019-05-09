@@ -5,7 +5,7 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary" >
       <a className="navbar-brand" href="/" >
-        Carpool Pal
+        <span>Carpool Pal</span>, Where pals commute
       </a>
     </nav>
   );
