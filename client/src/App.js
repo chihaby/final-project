@@ -5,20 +5,32 @@ import Nav from "./components/Nav";
 import Welcome from "./pages/Welcome";
 import Drivers from "./pages/Drivers";
 import Riders from "./pages/Riders";
+import DriversList from "./pages/Drivers-list";
+import RidersList from "./pages/Riders-list";
+import DriverProfile from "./pages/Driver-profile";
+import RiderProfile from "./pages/Rider-profile";
+import { ConfigProvider } from "./context/configContext";
+
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Nav />
-        <Switch>
-          <Route exact path="/" component={Welcome} />
-          <Route exact path="/drivers" component={Drivers} />
-          <Route exact path="/riders" component={Riders} />
-          <Route component={NoMatch} />
-        </Switch>
-      </div>
-    </Router>
+    <ConfigProvider>
+      <Router>
+        <div>
+          <Nav />
+          <Switch>
+            <Route exact path="/" component={Welcome} />
+            <Route exact path="/drivers" component={Drivers} />
+            <Route exact path="/riders" component={Riders} />
+            <Route exact path="/driverProfile" component={DriverProfile} />
+            <Route exact path="/riderProfile" component={RiderProfile} />
+            <Route exact path="/driversList" component={DriversList} />
+            <Route exact path="/ridersList" component={RidersList} />
+            <Route component={NoMatch} />
+          </Switch>
+        </div>
+      </Router>
+    </ConfigProvider>
   );
 }
 
