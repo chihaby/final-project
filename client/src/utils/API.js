@@ -28,7 +28,7 @@ export default {
   deleteRider: function(id) {
     return axios.delete("/api/riders/" + id);
   },
-  saveRiders: function(riderData) {
+  saveRider: function(riderData) {
     return axios.post("/api/riders", riderData);
   } 
 };

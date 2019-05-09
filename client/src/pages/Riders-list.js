@@ -22,7 +22,7 @@ class RidersList extends Component {
     loadRiders = () => {
         API.getRiders()
         .then(res =>
-            this.setState({ drivers: res.data, firstName: "", lastName: "", hobby: "" })
+            this.setState({ riders: res.data, firstName: "", lastName: "", hobby: "" })
         )
         .catch(err => console.log(err));
     };
