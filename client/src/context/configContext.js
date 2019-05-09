@@ -40,7 +40,7 @@ class ConfigProvider extends Component {
         ridersibrary: {
             riders: [],
             incrementLikes: (id) => {
-                const rider = (this.state.library.riders.find(search => search.id === id)) ? this.state.ridersLibrary.riders.findIndex(search => search.id === id) : null;
+                const rider = (this.state.ridersLibrary.riders.find(search => search.id === id)) ? this.state.ridersLibrary.riders.findIndex(search => search.id === id) : null;
                 if (rider === null) {
                     const {riders} = this.state.ridersLibrary;
                     riders.push({
@@ -68,16 +68,14 @@ class ConfigProvider extends Component {
                 }
             }
         }
-    
-
-
     };
 
     render() {
         return (
             <Provider
                 value={{
-                    library: this.state.ridersLibrary
+                    library: this.state.library,
+                    ridersLibrary: this.state.ridersLibrary
                 }}
             >
                 {this.props.children}
