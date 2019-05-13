@@ -77,7 +77,7 @@ class DriversList extends Component {
                                 <Link to={"/driversList/" + driver._id}>
                                 <strong>
                                     {driver.firstName} - {driver.lastName} <br />
-                                    {driver.hobby}
+                                    <span> </span>{driver.hobby}
                                 </strong>
                                 </Link>
                                 <DeleteBtn onClick={() => this.deleteDriver(driver._id)} />
