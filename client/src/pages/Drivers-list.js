@@ -71,15 +71,17 @@ class DriversList extends Component {
                             {this.state.drivers.map(driver => (
                             <ListItem key={driver._id}>
                                 <button className="like" onClick={()=> context.library.incrementLikes(driver._id)}>
-                                <i className="fas fa-thumbs-up"></i>                                
+                                <i className="fas fa-thumbs-up">&nbsp;&nbsp;</i>                                
                                 <span className="like-count">{(drivers.find(search => search.id === driver._id)) ? drivers.find(search => search.id === driver._id).likes : 0}</span>
                                 </button>
                                 <Link to={"/driversList/" + driver._id}>
                                 <strong>
-                                    {driver.firstName} - {driver.lastName} <br />
-                                    <span> </span>{driver.hobby}
+                                    {driver.firstName} {' '} {driver.lastName} <br />
                                 </strong>
                                 </Link>
+                                    <span className="destination">Destination: </span>{driver.hobby} <br />
+                                    <span className="destination">From: </span> <br />
+                                    <span className="destination">Time: </span>
                                 <DeleteBtn onClick={() => this.deleteDriver(driver._id)} />
                             </ListItem>
                             ))}

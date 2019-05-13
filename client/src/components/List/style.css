@@ -1,7 +1,7 @@
 .list-overflow-container {
   margin: auto;
   max-height: 545px;
-  max-width: 700px;
+  max-width: 600px;
   border: 3px solid rgb(14, 11, 11);
   border-radius: 10px;
   overflow-y: scroll;
@@ -25,7 +25,8 @@
 }
 
 .list-overflow-container li a {
-  color: rgb(31, 117, 151);
+  color: rgb(25, 5, 133);
+
 }
 
 .list-overflow-container li:first-child {
@@ -37,18 +38,30 @@
 }
 
 .list-group-item {
-  background-color:#FBD786;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-style: oblique;
+  background-color: rgb(253, 181, 57);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: initial;
   font-size: 20px;
 }
 
 i {
   color: white;
+  /* position: absolute;
+  right: 10px;
+  top: 5px; */
 }
 
 button {
   color: rgb(253, 164, 0);
   background-color: rgb(37, 37, 32);
   border-radius: 40%;
+}
+
+.destination {
+  color: black;
+}
+.like {
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
