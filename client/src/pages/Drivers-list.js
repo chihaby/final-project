@@ -7,6 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Consumer from "../context/configContext";
 
+
 class DriversList extends Component {
     state = {
         drivers: [],
@@ -69,12 +70,14 @@ class DriversList extends Component {
                         <List>
                             {this.state.drivers.map(driver => (
                             <ListItem key={driver._id}>
-                                <button className="like" onClick={()=> context.library.incrementLikes(driver._id)}><i className="fas fa-thumbs-up"></i>
+                                <button className="like" onClick={()=> context.library.incrementLikes(driver._id)}>
+                                <i className="fas fa-thumbs-up"></i>                                
                                 <span className="like-count">{(drivers.find(search => search.id === driver._id)) ? drivers.find(search => search.id === driver._id).likes : 0}</span>
                                 </button>
                                 <Link to={"/driversList/" + driver._id}>
                                 <strong>
-                                    {driver.firstName} - {driver.lastName}
+                                    {driver.firstName} - {driver.lastName} <br />
+                                    {driver.hobby}
                                 </strong>
                                 </Link>
                                 <DeleteBtn onClick={() => this.deleteDriver(driver._id)} />

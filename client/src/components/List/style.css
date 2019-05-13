@@ -23,7 +23,7 @@
 }
 
 .list-overflow-container li a {
-  color: #2A878C;
+  color: rgb(31, 117, 151);
 }
 
 .list-overflow-container li:first-child {
@@ -32,4 +32,21 @@
 
 .list-overflow-container li:last-child {
   border-bottom: none;
+}
+
+.list-group-item {
+  background-color:#FBD786;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: oblique;
+  font-size: 20px;
+}
+
+i {
+  color: white;
+}
+
+button {
+  color: rgb(253, 164, 0);
+  background-color: rgb(37, 37, 32);
+  border-radius: 40%;
 }
