@@ -26,6 +26,7 @@ function App() {
             <Route exact path="/ridersList/:id" component={RiderProfile} />
             <Route exact path="/driversList" component={DriversList} />
             <Route exact path="/ridersList" component={RidersList} />
+            <Route exact path="/callback" component={() => console.log('im authenticated')} />
             <Route component={NoMatch} />
           </Switch>
         </div>
