@@ -49,7 +49,7 @@ class Riders extends Component {
             hobby: this.state.hobby
         })
             .then(res => this.loadRiders(),
-            this.props.history.push('/ridersList')
+            this.props.history.push('/driversList')
             //add loading giffy here
             )
             .catch(err => console.log(err));
