@@ -7,7 +7,6 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Consumer from "../context/configContext";
 
-
 class DriversList extends Component {
     state = {
         drivers: [],

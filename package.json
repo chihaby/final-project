@@ -22,9 +22,9 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "axios": "^0.18.0",
-    "express": "^4.16.3",
-    "faker": "^4.1.0",
+
+    "express": "^4.16.4",
     "if-env": "^1.0.4",
-    "mongoose": "^5.3.16"
+    "mongoose": "^5.5.6"
   }
 }
