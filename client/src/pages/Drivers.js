@@ -70,19 +70,19 @@ class Drivers extends Component {
                                 value={this.state.firstName}
                                 onChange={this.handleInputChange}
                                 name="firstName"
-                                placeholder="first name"
+                                placeholder="First Name"
                             />
                             <Input
                                 value={this.state.lastName}
                                 onChange={this.handleInputChange}
                                 name="lastName"
-                                placeholder="last name"
+                                placeholder="Last Name"
                             />
                             <TextArea
                                 value={this.state.destination}
                                 onChange={this.handleInputChange}
                                 name="destination"
-                                placeholder="enter a destination"
+                                placeholder="Destination"
                             />
                             <FormBtn
                                 disabled={!(this.state.firstName && this.state.lastName)}
@@ -94,8 +94,21 @@ class Drivers extends Component {
                     </Col>
                 </Row>
                 <Row>
+                    <p>Temporary Links</p> <br />
                     <Col size="md-2">
                         <Link to="/">← Home</Link>
+                    </Col>
+                    <Col size="md-2">
+                        <Link to="/drivers">← Drivers-Form</Link>
+                    </Col>
+                    <Col size="md-2">
+                        <Link to="/riders">← Riders-Form</Link>
+                    </Col>
+                    <Col size="md-2">
+                        <Link to="/driversList">← Drivers-List</Link>
+                    </Col>
+                    <Col size="md-2">
+                        <Link to="/ridersList">← Riders-List</Link>
                     </Col>
                 </Row>
             </Container>

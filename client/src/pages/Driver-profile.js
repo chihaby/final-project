@@ -32,7 +32,7 @@ class DriverProfile extends Component {
                             <Col size="md-12">
                                 <Jumbotron>
                                     <h1>
-                                        {this.state.driver.firstName} - {this.state.driver.lastName}
+                                        {this.state.driver.firstName} {' '} {this.state.driver.lastName}
                                     </h1>
                                     {totalLikes && <h2>Total Likes: {totalLikes}</h2>}
                                 </Jumbotron>
@@ -49,8 +49,21 @@ class DriverProfile extends Component {
                             </Col>
                         </Row>
                         <Row>
+                            <p>Temporary Links</p> <br />
                             <Col size="md-2">
                                 <Link to="/">← Home</Link>
+                            </Col>
+                            <Col size="md-2">
+                                <Link to="/drivers">← Drivers-Form</Link>
+                            </Col>
+                            <Col size="md-2">
+                                <Link to="/riders">← Riders-Form</Link>
+                            </Col>
+                            <Col size="md-2">
+                                <Link to="/driversList">← Drivers-List</Link>
+                            </Col>
+                            <Col size="md-2">
+                                <Link to="/ridersList">← Riders-List</Link>
                             </Col>
                         </Row>
                     </Container>

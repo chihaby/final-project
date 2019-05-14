@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const driverSchema = new Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    hobby: String,
+    destination: String,
     date: { type: Date, default: Date.now }
 });
 
