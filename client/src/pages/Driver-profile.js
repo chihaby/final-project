@@ -10,7 +10,6 @@ import faker from 'faker';
 class DriverProfile extends Component {
     state = {
         driver: {},
-        users: []
     };
 
     componentDidMount() {
@@ -18,19 +17,6 @@ class DriverProfile extends Component {
             .then(res => this.setState({ driver: res.data }))
             .catch(err => console.log(err));
     }
-
-    // componentWillMount() {
-    //     for (let i = 0; i < 5; i++) {
-    //         const user = {
-    //             name: faker.internet.userName(),
-    //             email: faker.internet.email(),
-    //             avatar: faker.image.avatar(),
-    //         }
-    //         this.setState(prevState => ({
-    //             users: [...prevState.users, user],
-    //         }))
-    //         }
-    // }
 
     getLikesForDriver(id, drivers) {
         const thisDriver = drivers.find(driver => driver.id === id);
@@ -59,7 +45,7 @@ class DriverProfile extends Component {
                                 <article>
                                     <h1>Driver Profile</h1>
                                     <ListItem>
-                                        <img src={faker.image.avatar()} alt={"img"} width="50" height="50" /> <br />
+                                        <img src={faker.image.avatar()} alt={"img"} width="200" height="200" /> <br />
                                         {'Destination: '}{this.state.driver.destination} <br />
                                         {'From:  '}  <br />
                                         {'Time: '}   <br />
