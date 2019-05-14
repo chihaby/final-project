@@ -1,11 +1,13 @@
 .list-overflow-container {
+  margin: auto;
   max-height: 545px;
-  border: 1px #DDDDDD solid;
-  border-radius: 4px;
+  max-width: 600px;
+  border: 3px solid rgb(14, 11, 11);
+  border-radius: 10px;
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: #f3e7e3;
-  text-align: center;
+  text-align: left;
 }
 
 .list-overflow-container ul {
@@ -23,7 +25,8 @@
 }
 
 .list-overflow-container li a {
-  color: #2A878C;
+  color: rgb(25, 5, 133);
+
 }
 
 .list-overflow-container li:first-child {
@@ -33,3 +36,56 @@
 .list-overflow-container li:last-child {
   border-bottom: none;
 }
+
+.list-group-item {
+  background-color:#6ce9ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: initial;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.driver-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 44px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px white;
+}
+
+.rider-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 50px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px white;
+}
+
+i {
+  color: white;
+}
+
+.destination {
+  color: black;
+}
+.like {
+  background-color: #fdc661;
+  border-radius: 40px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
