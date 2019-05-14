@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
+import { List, ListItem } from "../components/List";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import Consumer from "../context/configContext";
-import Faker from 'faker';
+import faker from 'faker';
 
 class DriverProfile extends Component {
     state = {
         driver: {},
+        users: []
     };
 
     componentDidMount() {
@@ -17,12 +19,25 @@ class DriverProfile extends Component {
             .catch(err => console.log(err));
     }
 
+    // componentWillMount() {
+    //     for (let i = 0; i < 5; i++) {
+    //         const user = {
+    //             name: faker.internet.userName(),
+    //             email: faker.internet.email(),
+    //             avatar: faker.image.avatar(),
+    //         }
+    //         this.setState(prevState => ({
+    //             users: [...prevState.users, user],
+    //         }))
+    //         }
+    // }
+
     getLikesForDriver(id, drivers) {
         const thisDriver = drivers.find(driver => driver.id === id);
         return (thisDriver && thisDriver.likes) || null;
     }
 
-    render() {
+    render(user) {
         return (
             <Consumer>{context => {
                 const totalLikes = this.getLikesForDriver(this.state.driver._id, context.library.drivers);
@@ -40,12 +55,18 @@ class DriverProfile extends Component {
                         </Row>
                         <Row>
                             <Col size="md-10 md-offset-1">
+                            <List>
                                 <article>
-                                    <h1>Info</h1>
-                                    <p>
-                                        {this.state.driver.destination}
-                                    </p>
+                                    <h1>Driver Profile</h1>
+                                    <ListItem>
+                                        <img src={faker.image.avatar()} alt={"img"} width="50" height="50" /> <br />
+                                        {'Destination: '}{this.state.driver.destination} <br />
+                                        {'From:  '}  <br />
+                                        {'Time: '}   <br />
+                                        {'Phone: '}  <br />
+                                    </ListItem>
                                 </article>
+                                </List>
                             </Col>
                         </Row>
                         <Row>
