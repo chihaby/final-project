@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
+import { List, ListItem } from "../components/List";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-
 import Consumer from "../context/configContext";
+import faker from "faker";
 
 class RiderProfile extends Component {
     state = {
         rider: {}
+
     };
 
     componentDidMount() {
@@ -32,7 +34,7 @@ class RiderProfile extends Component {
                             <Col size="md-12">
                                 <Jumbotron>
                                     <h1>
-                                        {this.state.rider.firstName} - {this.state.rider.lastName}
+                                        {this.state.rider.firstName} {' '} {this.state.rider.lastName}
                                     </h1>
                                     {totalLikes && <h2>Total Likes: {totalLikes}</h2>}
                                 </Jumbotron>
@@ -41,10 +43,14 @@ class RiderProfile extends Component {
                         <Row>
                             <Col size="md-10 md-offset-1">
                                 <article>
-                                    <h1>Info</h1>
-                                    <p>
-                                        {this.state.rider.destination}
-                                    </p>
+                                    <h1>Rider Profile</h1>
+                                    <ListItem>
+                                        <img src={faker.image.avatar()} alt={"img"} width="200" height="200" /> <br />
+                                        {'Destination: '}{this.state.rider.destination} <br />
+                                        {'From:  '}  <br />
+                                        {'Time: '}   <br />
+                                        {'Phone: '}  <br />
+                                    </ListItem>
                                 </article>
                             </Col>
                         </Row>

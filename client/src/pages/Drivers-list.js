@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Consumer from "../context/configContext";
+import faker from "faker";
 
 class DriversList extends Component {
     state = {
@@ -78,6 +79,7 @@ class DriversList extends Component {
                                                             {driver.firstName} {' '} {driver.lastName} <br />
                                                         </strong>
                                                     </Link>
+                                                    <img src={faker.image.avatar()} alt={"img"} width="50" height="50" /> <br />
                                                     <span className="destination">Destination: </span>{driver.destination} <br />
                                                     <span className="destination">From: </span> <br />
                                                     <span className="destination">Time: </span>
