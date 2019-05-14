@@ -38,27 +38,12 @@
 }
 
 .list-group-item {
-  background-color: rgb(253, 181, 57);
+  background-color:#6ce9ff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-style: initial;
   font-size: 20px;
-}
-
-i {
-  color: white;
-}
-
-button:hover {
-  background-color: #28a9c0;
-}
-
-.destination {
-  color: black;
-}
-.like {
-  position: absolute;
-  right: 20px;
-  top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .driver-btn {
@@ -88,3 +73,19 @@ button:hover {
   border-radius: 15px;
   box-shadow: 0 9px white;
 }
+
+i {
+  color: white;
+}
+
+.destination {
+  color: black;
+}
+.like {
+  background-color: #fdc661;
+  border-radius: 40px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
