@@ -38,30 +38,54 @@
 }
 
 .list-group-item {
-  background-color: rgb(253, 181, 57);
+  background-color:#6ce9ff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-style: initial;
   font-size: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.driver-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 44px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px white;
+}
+
+.rider-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 50px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px white;
 }
 
 i {
   color: white;
-  /* position: absolute;
-  right: 10px;
-  top: 5px; */
-}
-
-button {
-  color: rgb(253, 164, 0);
-  background-color: rgb(37, 37, 32);
-  border-radius: 40%;
 }
 
 .destination {
   color: black;
 }
 .like {
+  background-color: #fdc661;
+  border-radius: 40px;
   position: absolute;
   right: 20px;
   top: 20px;
 }
+

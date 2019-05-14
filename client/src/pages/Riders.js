@@ -12,7 +12,7 @@ class Riders extends Component {
         riders: [],
         firstName: "",
         lastName: "",
-        hobby: ""
+        destination: ""
     };
 
     componentDidMount() {
@@ -21,83 +21,96 @@ class Riders extends Component {
 
     loadRiders = () => {
         API.getRiders()
-        .then(res =>
-            this.setState({ riders: res.data, firstName: "", lastName: "", hobby: "" })
-        )
-        .catch(err => console.log(err));
+            .then(res =>
+                this.setState({ riders: res.data, firstName: "", lastName: "", destination: "" })
+            )
+            .catch(err => console.log(err));
     };
 
     deleteRider = id => {
         API.deleteRider(id)
-        .then(res => this.loadRiders())
-        .catch(err => console.log(err));
+            .then(res => this.loadRiders())
+            .catch(err => console.log(err));
     };
 
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
-        [name]: value
+            [name]: value
         });
     };
 
     handleFormSubmit = event => {
         event.preventDefault();
         if (this.state.firstName && this.state.lastName) {
-        API.saveRider({
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            hobby: this.state.hobby
-        })
-            .then(res => this.loadRiders(),
-            this.props.history.push('/driversList')
-            //add loading giffy here
-            )
-            .catch(err => console.log(err));
+            API.saveRider({
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                destination: this.state.destination
+            })
+                .then(res => this.loadRiders(),
+                    this.props.history.push('/driversList')
+                    //add loading giffy here
+                )
+                .catch(err => console.log(err));
         }
     };
 
     render() {
         return (
-        <Container fluid>
-            <Row>
-            <Col size="md-6-offset-3 sm-12 lg-12" >
-                <Jumbotron>
-                <h1>Rider Info</h1>
-                </Jumbotron>
-                <form>
-                <Input
-                    value={this.state.firstName}
-                    onChange={this.handleInputChange}
-                    name="firstName"
-                    placeholder="first name"
-                />
-                <Input
-                    value={this.state.lastName}
-                    onChange={this.handleInputChange}
-                    name="lastName"
-                    placeholder="last name"
-                />
-                <TextArea
-                    value={this.state.hobby}
-                    onChange={this.handleInputChange}
-                    name="hobby"
-                    placeholder="enter a hobby"
-                />
-                <FormBtn
-                    disabled={!(this.state.firstName && this.state.lastName)}
-                    onClick={this.handleFormSubmit}
-                >
-                    Submit Rider Form
+            <Container fluid>
+                <Row>
+                    <Col size="md-6-offset-3 sm-12 lg-12" >
+                        <Jumbotron>
+                            <h1>Rider Info</h1>
+                        </Jumbotron>
+                        <form>
+                            <Input
+                                value={this.state.firstName}
+                                onChange={this.handleInputChange}
+                                name="firstName"
+                                placeholder="first name"
+                            />
+                            <Input
+                                value={this.state.lastName}
+                                onChange={this.handleInputChange}
+                                name="lastName"
+                                placeholder="last name"
+                            />
+                            <TextArea
+                                value={this.state.destination}
+                                onChange={this.handleInputChange}
+                                name="destination"
+                                placeholder="enter a destination"
+                            />
+                            <FormBtn
+                                disabled={!(this.state.firstName && this.state.lastName)}
+                                onClick={this.handleFormSubmit}
+                            >
+                                Submit Rider Form
                 </FormBtn>
-                </form>
-            </Col>
-            </Row>
-            <Row>
-            <Col size="md-2">
-                <Link to="/">← Home</Link>
-            </Col>
-            </Row>
-        </Container>
+                        </form>
+                    </Col>
+                </Row>
+                <Row>
+                    <p>Temporary Links</p> <br />
+                    <Col size="md-2">
+                        <Link to="/">← Home</Link>
+                    </Col>
+                    <Col size="md-2">
+                        <Link to="/drivers">← Drivers-Form</Link>
+                    </Col>
+                    <Col size="md-2">
+                        <Link to="/riders">← Riders-Form</Link>
+                    </Col>
+                    <Col size="md-2">
+                        <Link to="/driversList">← Drivers-List</Link>
+                    </Col>
+                    <Col size="md-2">
+                        <Link to="/ridersList">← Riders-List</Link>
+                    </Col>
+                </Row>
+            </Container>
         );
     }
 }
