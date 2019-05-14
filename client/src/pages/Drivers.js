@@ -12,7 +12,8 @@ class Drivers extends Component {
         drivers: [],
         firstName: "",
         lastName: "",
-        destination: ""
+        destination: "",
+        from: "",
     };
 
     componentDidMount() {

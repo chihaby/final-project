@@ -46,15 +46,10 @@
 
 i {
   color: white;
-  /* position: absolute;
-  right: 10px;
-  top: 5px; */
 }
 
-button {
-  color: rgb(253, 164, 0);
-  background-color: rgb(37, 37, 32);
-  border-radius: 40%;
+button:hover {
+  background-color: #28a9c0;
 }
 
 .destination {
@@ -64,4 +59,32 @@ button {
   position: absolute;
   right: 20px;
   top: 20px;
+}
+
+.driver-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 44px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px white;
+}
+
+.rider-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 50px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px white;
 }
