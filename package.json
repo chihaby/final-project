@@ -17,7 +17,8 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
+    "nodemon": "^1.18.7",
+    "google-map-react": "^1.1.4",
   },
   "dependencies": {
     "@material-ui/core": "^3.9.3",
@@ -28,7 +29,6 @@
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "faker": "^4.1.0",
-    "google-map-react": "^1.1.4",
     "if-env": "^1.0.4",
     "mongoose": "^5.5.6",
     "querystring": "^0.2.0",
