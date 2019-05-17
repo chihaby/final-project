@@ -9,6 +9,7 @@ import Consumer from "../context/configContext";
 import faker from "faker";
 import SimpleMap from "../components/Map/index.js";
 
+
 class DriversList extends Component {
     state = {
         drivers: [],

@@ -15,7 +15,7 @@ function Select(props) {
             <div className="rider">
                 <Link to="/riders">
                     <button className="rider-btn">
-                    Rider.
+                    Rider
                     </button>
                 </Link>
             </div>
