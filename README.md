@@ -2,7 +2,7 @@
 
 **TARGET</H3>**
 >This application will target current casual carpool users in the Bay Area. Currently the casual carpool community utilizes predetermined pick-up spots where both drivers and riders meet and without previous knowledge of each other. 
-We have identified and opportunity to provide both drivers and riders of the casual carpool a chance to determine who they ride with prior to their pick-up times.
+We have identified an opportunity to provide both drivers and riders of the casual carpool a chance to determine who they ride with prior to their pick-up times.
 
 **HOW</H3>**
 >By creating an app that has user profiles that define musical taste, film choices, and different types of interest and hobbies, we believe that the carpooling experience can be more enjoyable. People of similar interest can gravitate towards one another with the certainty that their interest and their musical choices are going to be pleasant subject matter.

@@ -6,19 +6,15 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Consumer from "../context/configContext";
-<<<<<<< Updated upstream
-=======
 import faker from "faker";
 import SimpleMap from "../components/Map/index.js";
-
->>>>>>> Stashed changes
 
 class DriversList extends Component {
     state = {
         drivers: [],
         firstName: "",
         lastName: "",
-        hobby: ""
+        destination: ""
     };
 
     componentDidMount() {
@@ -27,35 +23,35 @@ class DriversList extends Component {
 
     loadDrivers = () => {
         API.getDrivers()
-        .then(res =>
-            this.setState({ drivers: res.data, firstName: "", lastName: "", hobby: "" })
-        )
-        .catch(err => console.log(err));
+            .then(res =>
+                this.setState({ drivers: res.data, firstName: "", lastName: "", destination: "" })
+            )
+            .catch(err => console.log(err));
     };
 
     deleteDriver = id => {
         API.deleteDriver(id)
-        .then(res => this.loadDrivers())
-        .catch(err => console.log(err));
+            .then(res => this.loadDrivers())
+            .catch(err => console.log(err));
     };
 
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
-        [name]: value
+            [name]: value
         });
     };
 
     handleFormSubmit = event => {
         event.preventDefault();
         if (this.state.firstName && this.state.lastName) {
-        API.saveDriver({
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            hobby: this.state.hobby
-        })
-            .then(res => this.loadDrivers())
-            .catch(err => console.log(err));
+            API.saveDriver({
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                destination: this.state.destination
+            })
+                .then(res => this.loadDrivers())
+                .catch(err => console.log(err));
         }
     };
 
@@ -71,6 +67,7 @@ class DriversList extends Component {
                                     <Jumbotron>
                                         <h1>Drivers List</h1>
                                     </Jumbotron>
+
                                     <Row>
                                         <SimpleMap/>
                                         {this.state.drivers.length ? (
@@ -98,8 +95,9 @@ class DriversList extends Component {
                                                 <h3>No Results to Display</h3>
                                             )}
                                     </Row>
-                                </Col>
+                                    </Col>
                             </Row>
+                                    
                             <Row>
                                 <p>Temporary Links</p> <br />
                                 <Col size="md-2">

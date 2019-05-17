@@ -1,19 +1,21 @@
-require('dotenv').config();
-const express = require("express");
-
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
-const PORT = process.env.PORT || 3001;
-
+/**
+ * This is an example of a basic node.js script that performs
+ * the Authorization Code oAuth2 flow to authenticate against
+ * the Spotify Accounts.
+ *
+ * For more information, read
+ * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
+ */
+require("dotenv").config();
+var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
 var client_id = process.env.SPOTIFY_ID; // Your client id
-var client_secret = process.env.SPOTIFY_SECRET; // Your secret
-var redirect_uri = 'http://localhost:3000/callback'; // Your redirect uri
+var client_secret = process.env.SPOTIFY_SECRET // Your secret
+var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -32,30 +34,19 @@ var generateRandomString = function (length) {
 
 var stateKey = 'spotify_auth_state';
 
-// Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-} else {
-  app.use(express.static(__dirname + '/public'))
-    .use(cors())
-    .use(cookieParser());
-}
-// Add routes, both API and view
+var app = express();
 
+app.use(express.static(__dirname + '/public'))
+  .use(cors())
+  .use(cookieParser());
 
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/carpool-pal");
-
-app.get('/api/login', function (req, res) {
+app.get('/login', function (req, res) {
 
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
 
   // your application requests authorization
-  var scope = 'user-read-private user-read-email';
+  var scope = 'user-read-private user-read-email user-read-playback-state';
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
@@ -152,8 +143,5 @@ app.get('/refresh_token', function (req, res) {
   });
 });
 
-app.use(routes);
-// Start the API server
-app.listen(PORT, function () {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-});
+console.log('Listening on 8888');
+app.listen(8888);
