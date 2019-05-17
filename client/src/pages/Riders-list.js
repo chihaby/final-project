@@ -7,6 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Consumer from "../context/configContext";
 import faker from "faker";
+import SimpleMap from "../components/Map"
 
 class RidersList extends Component {
     state = {
@@ -66,6 +67,8 @@ class RidersList extends Component {
                                     <Jumbotron>
                                         <h1>Riders List</h1>
                                     </Jumbotron>
+                                    <Row>
+                                    <SimpleMap />
                                     {this.state.riders.length ? (
                                         <List>
                                             {this.state.riders.map(rider => (
@@ -86,10 +89,14 @@ class RidersList extends Component {
                                                     <DeleteBtn onClick={() => this.deleteRider(rider._id)} />
                                                 </ListItem>
                                             ))}
+                                            
                                         </List>
+                                        
                                     ) : (
                                             <h3>No Results to Display</h3>
                                         )}
+                                        
+                                        </Row>
                                 </Col>
                             </Row>
                             <Row>

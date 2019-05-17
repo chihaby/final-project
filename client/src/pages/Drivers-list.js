@@ -7,6 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Consumer from "../context/configContext";
 import faker from "faker";
+import SimpleMap from "../components/Map"
 
 class DriversList extends Component {
     state = {
@@ -66,6 +67,9 @@ class DriversList extends Component {
                                     <Jumbotron>
                                         <h1>Drivers List</h1>
                                     </Jumbotron>
+                                    <Row>
+                                    <SimpleMap />
+                                    
                                     {this.state.drivers.length ? (
                                         <List>
                                             {this.state.drivers.map(driver => (
@@ -86,10 +90,12 @@ class DriversList extends Component {
                                                     <DeleteBtn onClick={() => this.deleteDriver(driver._id)} />
                                                 </ListItem>
                                             ))}
+                                            
                                         </List>
                                     ) : (
                                             <h3>No Results to Display</h3>
                                         )}
+                                       </Row> 
                                 </Col>
                             </Row>
                             <Row>
