@@ -7,6 +7,8 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Consumer from "../context/configContext";
 import faker from "faker";
+import SimpleMap from "../components/Map/index.js";
+
 
 class RidersList extends Component {
     state = {
@@ -66,30 +68,35 @@ class RidersList extends Component {
                                     <Jumbotron>
                                         <h1>Riders List</h1>
                                     </Jumbotron>
-                                    {this.state.riders.length ? (
-                                        <List>
-                                            {this.state.riders.map(rider => (
-                                                <ListItem key={rider._id}>
-                                                    <button className="like" onClick={() => context.ridersLibrary.incrementLikes(rider._id)}>
-                                                        <i className="fas fa-thumbs-up">&nbsp;&nbsp;</i>
-                                                        <span className="like-count">{(riders.find(search => search.id === rider._id)) ? riders.find(search => search.id === rider._id).likes : 0}</span>
-                                                    </button>
-                                                    <Link to={"/ridersList/" + rider._id}>
-                                                        <strong>
-                                                            {rider.firstName} {' '} {rider.lastName} <br />
-                                                        </strong>
-                                                    </Link>
-                                                    <img src={faker.image.avatar()} alt={"img"} width="50" height="50" /> <br />
-                                                    <span className="destination">Destination: </span>{rider.destination} <br />
-                                                    <span className="destination">From: </span> <br />
-                                                    <span className="destination">Time: </span>
-                                                    <DeleteBtn onClick={() => this.deleteRider(rider._id)} />
-                                                </ListItem>
-                                            ))}
-                                        </List>
-                                    ) : (
-                                            <h3>No Results to Display</h3>
-                                        )}
+                                    <Row>
+                                        <SimpleMap/>
+                                        {this.state.riders.length ? (
+                                            <List>
+                                                {this.state.riders.map(rider => (
+                                                    <ListItem key={rider._id}>
+                                                        <button className="like" onClick={() => context.ridersLibrary.incrementLikes(rider._id)}>
+                                                            <i className="fas fa-thumbs-up">&nbsp;&nbsp;</i>
+                                                            <span className="like-count">{(riders.find(search => search.id === rider._id)) ? riders.find(search => search.id === rider._id).likes : 0}</span>
+                                                        </button>
+                                                        <Link to={"/ridersList/" + rider._id}>
+                                                            <strong>
+                                                                {rider.firstName} {' '} {rider.lastName} <br />
+                                                            </strong>
+                                                        </Link>
+                                                        <img src={faker.image.avatar()} alt={"img"} width="50" height="50" /> <br />
+                                                        <span className="destination">Destination: </span>{rider.destination} <br />
+                                                        <span className="destination">From: </span> <br />
+                                                        <span className="destination">Time: </span>
+                                                        <DeleteBtn onClick={() => this.deleteRider(rider._id)} />
+                                                    </ListItem>
+                                                ))}
+                                            </List>
+                                        ) : (
+                                                <h3>No Results to Display</h3>
+                                            )}
+
+                                    </Row>
+                                    
                                 </Col>
                             </Row>
                             <Row>
