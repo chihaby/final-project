@@ -12,6 +12,7 @@ import RiderProfile from "./pages/Rider-profile";
 import SpotifyLogIn from "./pages/SpotifyLogIn";
 
 import { ConfigProvider } from "./context/configContext";
+import Spotify from "./pages/Spotify";
 
 
 function App() {
@@ -28,7 +29,9 @@ function App() {
             <Route exact path="/ridersList/:id" component={RiderProfile} />
             <Route exact path="/driversList" component={DriversList} />
             <Route exact path="/ridersList" component={RidersList} />
-            <Route exact path="/spotifylogin" component={SpotifyLogIn} />
+
+            <Route exact path="/callback" component={Spotify} />
+
             <Route component={NoMatch} />
           </Switch>
         </div>

@@ -20,7 +20,7 @@ var redirect_uri = 'http://localhost:3000/callback'; // Your redirect uri
  * @param  {number} length The length of the string
  * @return {string} The generated string
  */
-var generateRandomString = function(length) {
+var generateRandomString = function (length) {
   var text = '';
   var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
@@ -40,8 +40,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 } else {
   app.use(express.static(__dirname + '/public'))
-   .use(cors())
-   .use(cookieParser());
+    .use(cors())
+    .use(cookieParser());
 }
 // Add routes, both API and view
 
@@ -49,7 +49,7 @@ if (process.env.NODE_ENV === "production") {
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/carpool-pal");
 
-app.get('/api/login', function(req, res) {
+app.get('/api/login', function (req, res) {
 
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
@@ -66,7 +66,7 @@ app.get('/api/login', function(req, res) {
     }));
 });
 
-app.get('/callback', function(req, res) {
+app.get('/callback', function (req, res) {
 
   // your application requests refresh and access tokens
   // after checking the state parameter
@@ -95,11 +95,11 @@ app.get('/callback', function(req, res) {
       json: true
     };
 
-    request.post(authOptions, function(error, response, body) {
+    request.post(authOptions, function (error, response, body) {
       if (!error && response.statusCode === 200) {
 
         var access_token = body.access_token,
-            refresh_token = body.refresh_token;
+          refresh_token = body.refresh_token;
 
         var options = {
           url: 'https://api.spotify.com/v1/me',
@@ -108,7 +108,7 @@ app.get('/callback', function(req, res) {
         };
 
         // use the access token to access the Spotify Web API
-        request.get(options, function(error, response, body) {
+        request.get(options, function (error, response, body) {
           console.log(body);
         });
 
@@ -128,7 +128,7 @@ app.get('/callback', function(req, res) {
   }
 });
 
-app.get('/refresh_token', function(req, res) {
+app.get('/refresh_token', function (req, res) {
 
   // requesting access token from refresh token
   var refresh_token = req.query.refresh_token;
@@ -142,7 +142,7 @@ app.get('/refresh_token', function(req, res) {
     json: true
   };
 
-  request.post(authOptions, function(error, response, body) {
+  request.post(authOptions, function (error, response, body) {
     if (!error && response.statusCode === 200) {
       var access_token = body.access_token;
       res.send({
@@ -154,6 +154,6 @@ app.get('/refresh_token', function(req, res) {
 
 app.use(routes);
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });

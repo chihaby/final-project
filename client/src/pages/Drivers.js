@@ -13,7 +13,6 @@ class Drivers extends Component {
         firstName: "",
         lastName: "",
         destination: "",
-        from: "",
     };
 
     componentDidMount() {
@@ -90,7 +89,7 @@ class Drivers extends Component {
                                 onClick={this.handleFormSubmit}
                             >
                                 Submit Driver Form
-                </FormBtn>
+                            </FormBtn>
                         </form>
                     </Col>
                 </Row>
