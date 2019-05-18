@@ -64,12 +64,12 @@ class RidersList extends Component {
                     return (
                         <Container fluid>
                             <Row>
-                                <Col size="md-6-offset-3 sm-12 lg-12">
+                                <Col size="md-8-offset-1 sm-12 lg-12">
                                     <Jumbotron>
                                         <h1>Riders List</h1>
                                     </Jumbotron>
                                     <Row>
-                                        <SimpleMap/>
+                                        <SimpleMap />
                                         {this.state.riders.length ? (
                                             <List>
                                                 {this.state.riders.map(rider => (
@@ -94,10 +94,7 @@ class RidersList extends Component {
                                         ) : (
                                                 <h3>No Results to Display</h3>
                                             )}
-
                                     </Row>
-                                    
-
                                 </Col>
                             </Row>
                             <Row>
