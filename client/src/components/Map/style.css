@@ -1,5 +1,9 @@
 .map {
     align-content: center;
-
+    margin-left: -50px;
 }
-
+.gmap {
+    margin: auto;
+    border-radius: 10px;
+    background-color: black;
+}
