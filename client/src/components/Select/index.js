@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 function Select(props) {
     return (
@@ -8,26 +8,27 @@ function Select(props) {
             <div className="driver">
                 <Link to="/drivers">
                     <button className="driver-btn">
-                    Driver
+                        Driver
                     </button>
                 </Link>
             </div>
             <div className="rider">
                 <Link to="/riders">
                     <button className="rider-btn">
-                    Rider
+                        Rider
                     </button>
                 </Link>
             </div>
             <div className="logIn w Spotify">
                 <a href='http://localhost:3001/api/login'>
                     <button className="rider-btn">
-                    Spotify
+                        Spotify
                     </button>
-                    </a>
+                </a>
             </div>
         </div>
     )
 }
 
 export default Select;
+// <a href='http://localhost:3001/api/login'>
