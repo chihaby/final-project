@@ -22,15 +22,19 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "axios": "^0.18.0",
+    "cookie": "^0.4.0",
     "cookie-parser": "^1.4.4",
     "cookieparser": "^0.1.0",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "faker": "^4.1.0",
+    "google-map-react": "^1.1.4",
     "if-env": "^1.0.4",
     "mongoose": "^5.5.6",
+    "parser": "^0.1.4",
     "querystring": "^0.2.0",
+    "react-google-maps": "^9.4.5",
     "request": "^2.88.0"
   }
 }
