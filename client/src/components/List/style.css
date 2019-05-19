@@ -95,3 +95,26 @@ i {
   top: 20px;
 }
 
+.spotifyLogin {
+  color: orange;
+  background-color: black;
+  text-align: center;
+  margin-left: 30%;
+}
+
+.checkNowPlaying{
+  color: orange;
+  background-color: black;
+  text-align: center;
+  margin-left: 30%;
+}
+
+.nowPlayingTitle {
+  text-align: center;
+}
+
+.nowPlayingImage {
+  text-align: center;
+}
+
+
