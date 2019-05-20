@@ -1,6 +1,6 @@
 .list-overflow-container {
   margin: auto;
-  max-height: 545px;
+  max-height: 575px;
   max-width: 600px;
   border: 3px solid rgb(14, 11, 11);
   border-radius: 10px;
@@ -31,10 +31,15 @@
 
 .list-overflow-container li:first-child {
   border-top: none;
+  
 }
 
 .list-overflow-container li:last-child {
   border-bottom: none;
+  background-color:#6ce9ff;
+  height: 200px;
+  width: 500px;
+  float: left;
 }
 
 .list-group-item {
@@ -45,6 +50,7 @@
   margin-bottom: 20px;
   border-radius: 10px;
 }
+
 
 .driver-btn {
   display: inline-block;

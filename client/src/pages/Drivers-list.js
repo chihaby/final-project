@@ -64,13 +64,12 @@ class DriversList extends Component {
                     return (
                         <Container fluid>
                             <Row>
-                                <Col size="md-6-offset-3 sm-12 lg-12">
+                                <Col size="md-8-offset-1 sm-12 lg-12">
                                     <Jumbotron>
                                         <h1>Drivers List</h1>
                                     </Jumbotron>
-
                                     <Row>
-                                        <SimpleMap/>
+                                        <SimpleMap />
                                         {this.state.drivers.length ? (
                                             <List>
                                                 {this.state.drivers.map(driver => (
@@ -96,9 +95,8 @@ class DriversList extends Component {
                                                 <h3>No Results to Display</h3>
                                             )}
                                     </Row>
-                                    </Col>
+                                </Col>
                             </Row>
-                                    
                             <Row>
                                 <p>Temporary Links</p> <br />
                                 <Col size="md-2">
