@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import { Link } from "react-router-dom";
 import Jumbotron from "../components/Jumbotron";
+import { List, ListItem } from "../components/List"
 import Spotify from 'spotify-web-api-js';
 
 const spotifyWebApi = new Spotify();
@@ -61,24 +62,32 @@ class SpotifyNowPlaying extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <div className="logIn w Spotify">
-                        <a href='http://localhost:8888'>
-                            <button className="nowPlaying">
-                                Login With Spotify
-                            </button>
-                        </a>
-                    </div>
-                    <div>
-                        Now Playing: {this.state.nowPlaying.name}
-                    </div>
-                    <div>
-                        <img src={this.state.nowPlaying.image} style={{ width: 300 }} />
-                    </div>
-                    <div>
-                        <button onClick={() => this.getNowPlaying()} >
-                            Check Now Playing
-                    </button>
-                    </div>
+                    <List>
+                        <ListItem>
+                            <div className="logIn w Spotify">
+                                <a href='http://localhost:8888'>
+                                    <button className="spotifyLogin">
+                                        Login With Spotify
+                                    </button>
+                                </a>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div>
+                                <button className="checkNowPlaying" onClick={() => this.getNowPlaying()} >
+                                    Check Now Playing
+                                </button>
+                            </div>
+                        </ListItem>
+                        <ListItem>
+                            <div className="nowPlayingTitle">
+                                Now Playing: {this.state.nowPlaying.name}
+                            </div>
+                            <div className="nowPlayingImage">
+                                <img src={this.state.nowPlaying.image} style={{ width: 300 }} />
+                            </div>
+                        </ListItem>
+                    </List>
                 </Row>
                 <Row>
                     <p>Temporary Links</p> <br />
