@@ -27,11 +27,8 @@ function App() {
             <Route exact path="/ridersList/:id" component={RiderProfile} />
             <Route exact path="/driversList" component={DriversList} />
             <Route exact path="/ridersList" component={RidersList} />
-<<<<<<< HEAD
-=======
             <Route exact path="/spotify" component={SpotifyNowPlaying} />
             <Route exact path="/callback" component={SpotifyNowPlaying} />
->>>>>>> b97b483b3a4c4b6f28afbdeec0ab56a17b10647d
             <Route component={NoMatch} />
           </Switch>
         </div>
