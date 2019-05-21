@@ -38,4 +38,3 @@ function App() {
 }
 
 export default App;
-//  <Route exact path="/callback" component={() => <h1>Callback</h1>} />
