@@ -29,8 +29,7 @@ function About() {
                 Our app will provide a rating system that keeps riders polite and considerate with each other and promotes accountability within the pooling community. People have demonstrated that status and a positive perception of themselves to others in a community is the best way to mantain integrity and a healthy environment. Anyone who is negative or disruptive can in essence cancel themselves out of the community because their ratings will reflect it so. </p>
             <h4>TECHNOLOGIES</h4>
             <p>Spotify, Google Maps, Axios, React, Node.Js<br/>
-                Still in the works</p>
-        
+                Still in the works</p>        
         <Row>
             <p>Temporary Links</p><br/>
             <Col size="md-2">
