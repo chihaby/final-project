@@ -69,7 +69,9 @@ class RidersList extends Component {
                                         <h1>Riders List</h1>
                                     </Jumbotron>
                                     <Row>
+                                       
                                         <SimpleMap />
+                                    
                                         {this.state.riders.length ? (
                                             <List>
                                                 {this.state.riders.map(rider => (
