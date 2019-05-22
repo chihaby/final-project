@@ -107,6 +107,9 @@ class Riders extends Component {
                     <Col size="md-2">
                         <Link to="/ridersList">← Riders-List</Link>
                     </Col>
+                    <Col size="md-2">
+                        <Link to="/about">← About</Link>
+                    </Col>
                 </Row>
             </Container>
         );
