@@ -20,7 +20,7 @@ function Select(props) {
                 </Link>
             </div>
             <div className="logIn w Spotify">
-                <a href='http://localhost:3001/api/login'>
+                <a href='http://localhost:3001/login'>
                     <button className="rider-btn">
                         Spotify
                     </button>
