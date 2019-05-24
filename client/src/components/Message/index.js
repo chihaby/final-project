@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import MessageList from "../MessageList";
 // import SendMessageForm from "../SendMessageForm";
-import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
+// import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
 import Chatkit from "@pusher/chatkit-client";
 
 const testToken = "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/9e14975c-602d-4718-8bad-ca97925e559a/token";
@@ -36,12 +36,10 @@ class Message extends Component {
             .then(currentUser => {
                 this.currentUser = currentUser
                 console.log("current", currentUser)
-
                 this.currentUser.subscribeToRoom({
                     roomId: roomId,
                     hooks: {
                         onNewMessage: message => {
-                            console.log("message", message)
 
                             this.setState({
                                 messages: [...this.state.messages, message]
@@ -53,11 +51,12 @@ class Message extends Component {
     }
 
     sendMessage(text) {
-        console.log("hello");
+        console.log("from sendMessage", text);
         this.currentUser.sendMessage({
             text,
             roomId: roomId
         })
+        console.log("roomId", roomId)
     }
 
     render() {
