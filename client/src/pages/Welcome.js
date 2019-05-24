@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Select from "../components/Select";
-import NoMatch from "./NoMatch";
 
 class Welcome extends Component {
-    render () {
+    render() {
         return (
             <div>
                 <Select />

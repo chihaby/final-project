@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
 class Riders extends Component {
@@ -108,6 +106,9 @@ class Riders extends Component {
                     </Col>
                     <Col size="md-2">
                         <Link to="/ridersList">← Riders-List</Link>
+                    </Col>
+                    <Col size="md-2">
+                        <Link to="/about">← About</Link>
                     </Col>
                 </Row>
             </Container>

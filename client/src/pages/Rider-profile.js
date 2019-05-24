@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
+import { ListItem } from "../components/List";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import Consumer from "../context/configContext";
@@ -70,6 +70,9 @@ class RiderProfile extends Component {
                             </Col>
                             <Col size="md-2">
                                 <Link to="/ridersList">← Riders-List</Link>
+                            </Col>
+                            <Col size="md-2">
+                                <Link to="/about">← About</Link>
                             </Col>
                         </Row>
                     </Container>
