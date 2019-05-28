@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import Consumer from "../context/configContext";
-import faker from "faker";
-import SimpleMap from "../components/Map/index.js";
+import React, { Component } from "react"
+import DeleteBtn from "../components/DeleteBtn"
+import Jumbotron from "../components/Jumbotron"
+import API from "../utils/API"
+import { Link } from "react-router-dom"
+import { Col, Row, Container } from "../components/Grid"
+import { List, ListItem } from "../components/List"
+import Consumer from "../context/configContext"
+import faker from "faker"
+import SimpleMap from "../components/Map/index.js"
 
 
 class RidersList extends Component {
@@ -118,6 +118,9 @@ class RidersList extends Component {
                                 </Col>
                                 <Col size="md-2">
                                     <Link to="/about">← About</Link>
+                                </Col>
+                                <Col size="md-2">
+                                    <Link to="/chat">← Chat</Link>
                                 </Col>
                             </Row>
                         </Container>
