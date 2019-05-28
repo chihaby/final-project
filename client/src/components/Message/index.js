@@ -1,32 +1,40 @@
-import React, { Component } from "react";
-// import MessageList from "../MessageList";
-// import SendMessageForm from "../SendMessageForm";
-import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
-import Chatkit from "@pusher/chatkit-client";
+import React, { Component } from "react"
+import Jumbotron from "../Jumbotron"
+import { Col, Row, Container } from "../Grid"
+import MessageList from "../MessageList"
+import MessageFormSend from "../MessageFormSend"
+import MessageRoomList from "../MessageRoomList"
+import MessageNewRoomForm from "../MessageNewRoomForm"
+import Chatkit from "@pusher/chatkit-client"
+import { testToken, instanceLocator } from "../../context/configContext"
+import "./style.css";
 
-const testToken = "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/9e14975c-602d-4718-8bad-ca97925e559a/token";
-const instanceLocator = "v1:us1:9e14975c-602d-4718-8bad-ca97925e559a";
-const roomId = '19414065';
-const username = 'Rad';
+//const username = userId;
+//const roomId = '19414065';
 
+function Title() {
+    return <p className="title">chat room</p>
+}
 
 class Message extends Component {
     constructor() {
         super()
         this.state = {
-            messages: []
+            roomId: "19414065",
+            messages: [],
+            joinableRooms: [],
+            joinedRooms: []
         }
         this.sendMessage = this.sendMessage.bind(this)
-        console.log(this.state.messages);
+        this.subscribeToRoom = this.subscribeToRoom.bind(this)
+        this.getRooms = this.getRooms.bind(this)
+        this.createRoom = this.createRoom.bind(this)
     }
 
-
-
     componentDidMount() {
-        console.log(testToken);
         const chatManager = new Chatkit.ChatManager({
             instanceLocator: instanceLocator,
-            userId: username,
+            userId: 'Rad',
             tokenProvider: new Chatkit.TokenProvider({
                 url: testToken
             })
@@ -35,104 +43,85 @@ class Message extends Component {
         chatManager.connect()
             .then(currentUser => {
                 this.currentUser = currentUser
-                console.log("current", currentUser)
-
-                this.currentUser.subscribeToRoom({
-                    roomId: roomId,
-                    hooks: {
-                        onNewMessage: message => {
-                            console.log("message", message)
-
-                            this.setState({
-                                messages: [...this.state.messages, message]
-                            })
-                        }
-                    }
+                this.getRooms()
+            })
+            .catch(err => console.log('error on connecting: ', err))
+    }
+    getRooms() {
+        this.currentUser.getJoinableRooms()
+            .then(joinableRooms => {
+                this.setState({
+                    joinableRooms,
+                    joinedRooms: this.currentUser.rooms
                 })
             })
+            .catch(err => console.log('error on joinableRooms: ', err))
+    }
+
+    subscribeToRoom(roomId) {
+        this.setState({ messages: [] })
+        this.currentUser.subscribeToRoom({
+            roomId,
+            hooks: {
+                onNewMessage: message => {
+                    this.setState({
+                        messages: [...this.state.messages, message]
+                    })
+                }
+            }
+        })
+            .then(room => {
+                this.setState({
+                    roomId: room.id
+                })
+                this.getRooms()
+            })
+            .catch(err => console.log('error on subscribing to room: ', err))
     }
 
     sendMessage(text) {
-        console.log("hello");
         this.currentUser.sendMessage({
             text,
-            roomId: roomId
+            roomId: this.state.roomId
         })
+    }
+
+    createRoom(name) {
+        this.currentUser.createRoom({
+            name
+        })
+            .then(room => this.subscribeToRoom(room.id))
+            .catch(err => console.log('error with createRoom: ', err))
     }
 
     render() {
         return (
-            <div className="app">
-                <Title />
-                <MessageList
-                    roomId={this.state.roomId}
-                    messages={this.state.messages} />
-                <SendMessageForm
-                    sendMessage={this.sendMessage} />
-            </div>
+            <Container fluid>
+                <Row>
+                    <Col size="md-8-offset-1 sm-12 lg-12">
+                        <Jumbotron>
+                            <h1>Chat Chat</h1>
+                        </Jumbotron>
+                        <Row>
+                            <div className="chatContainer">
+                                <MessageRoomList
+                                    subscribeToRoom={this.subscribeToRoom}
+                                    rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]}
+                                    roomId={this.state.roomId} />
+                                <Title />
+                                <MessageList
+                                    roomId={this.state.roomId}
+                                    messages={this.state.messages} />
+                                <MessageFormSend
+                                    sendMessage={this.sendMessage} />
+                                <MessageNewRoomForm createRoom={this.createRoom} />
+                            </div>
+                        </Row>
+                    </Col>
+                </Row>
+            </Container>
         );
     }
-}
-
-class MessageList extends Component {
-    render() {
-        return (
-            <ul className="message-list">
-                {this.props.messages.map((message, index) => {
-                    return (
-                        <li key={message.id} className="message">
-                            <div>{message.senderId}</div>
-                            <div>{message.text}</div>
-                        </li>
-                    )
-                })}
-            </ul>
-        )
-    }
-}
-
-class SendMessageForm extends Component {
-    constructor() {
-        super()
-        this.state = {
-            message: ''
-        }
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
-
-    handleChange(e) {
-        this.setState({
-            message: e.target.value
-        })
-    }
-
-    handleSubmit(e) {
-        e.preventDefault()
-        this.props.sendMessage(this.state.message)
-        this.setState({
-            message: ''
-        })
-    }
-
-    render() {
-        return (
-            <form
-                onSubmit={this.handleSubmit}
-                className="send-message-form">
-                <input
-                    onChange={this.handleChange}
-                    value={this.state.message}
-                    placeholder="Type your message and hit ENTER"
-                    type="text" />
-            </form>
-        )
-    }
-}
-
-
-function Title() {
-    return <p className="title">chat room</p>
 }
 
 export default Message;

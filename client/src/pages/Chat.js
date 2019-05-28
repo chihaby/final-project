@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Message from "../components/Message";
-// import SendMessageForm from "../components/SendMessageForm";
+// import SendMessageForm from "../components/MessageFormSend";
 // import MessageList from "../components/MessageList";
 
 class Chat extends Component {
@@ -8,8 +8,6 @@ class Chat extends Component {
         return (
             <div>
                 <Message />
-                {/* <SendMessageForm />
-                <MessageList /> */}
             </div>
         );
     }

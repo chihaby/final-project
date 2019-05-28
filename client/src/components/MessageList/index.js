@@ -1,20 +1,34 @@
-// import React, { Component } from "react";
+import React from "react";
+import ReactDOM from "react-dom"
 
-// class MessageList extends React.Component {
-//     render() {
-//         return (
-//             <ul className="message-list">
-//                 {this.props.messages.map((message, index) => {
-//                     return (
-//                       <li  key={message.id} className="message">
-//                         <div>{message.senderId}</div>
-//                         <div>{message.text}</div>
-//                       </li>
-//                     )
-//                 })}
-//             </ul>
-//         )
-//     }
-// }
+class MessageList extends React.Component {
 
-// export default MessageList;
+    componentWillUpdate() {
+        const node = ReactDOM.findDOMNode(this)
+        this.shouldScrollToBottom = node.scrollTop + node.clientHeight + 100 >= node.scrollHeight
+    }
+
+    componentDidUpdate() {
+        if (this.shouldScrollToBottom) {
+            const node = ReactDOM.findDOMNode(this)
+            node.scrollTop = node.scrollHeight
+        }
+    }
+
+    render() {
+        return (
+            <div className="message-list">
+                {this.props.messages.map((message, index) => {
+                    return (
+                        <div key={index} className="message">
+                            <div className="message-username">{message.senderId}</div>
+                            <div className="message-text">{message.text}</div>
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    }
+}
+
+export default MessageList;
