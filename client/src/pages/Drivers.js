@@ -82,6 +82,7 @@ class Drivers extends Component {
                                 name="destination"
                                 placeholder="Destination"
                             />
+                            
                             <FormBtn
                                 disabled={!(this.state.firstName && this.state.lastName)}
                                 onClick={this.handleFormSubmit}
@@ -92,7 +93,7 @@ class Drivers extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <p>Temporary Links</p> <br />
+                    {/* <p>Temporary Links</p> <br /> */}
                     <Col size="md-2">
                         <Link to="/">← Home</Link>
                     </Col>
@@ -107,9 +108,6 @@ class Drivers extends Component {
                     </Col>
                     <Col size="md-2">
                         <Link to="/ridersList">← Riders-List</Link>
-                    </Col>
-                    <Col size="md-2">
-                        <Link to="/about">← About</Link>
                     </Col>
                 </Row>
             </Container>
