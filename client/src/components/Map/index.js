@@ -1,92 +1,3 @@
-// import React, { Component } from 'react';
-// import GoogleMapReact from 'google-map-react';
-// import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker} from 'react-google-maps';
-// import Geocode from 'react-geocode';
-// Geocode.setApiKey("AIzaSyD9wlCcxU0_t4R2VfsyqXFnP4MkD2F44z0"); 
-// Geocode.enableDebug();
-// import "./style.css";
-// import { Container } from '../Grid';
-// import placeholder from "./images/placeholder.png"
-
-
-// const AnyReactComponent = ({ src }) => <div>{src}</div>;
-
-
-
-
-// class SimpleMap extends Component {
-
-  
-//   // static currentLocations = {
-//   //   center: currentLocations.array,
-//   //   zoom: currentLocations.number,
-//   //   greatPlaceCoords: currentLocations.any
-//   // }
-
-//   static defaultProps = {
-//     center: [37.871853, -122.258423], 
-//     zoom: 15,
-//     homePoint: {lat:37.871853, lng: -122.258423},
-//     imagesrc: placeholder
-//   };
-
-//   render() {
-//     return (
-//       // Important! Always set the container height explicitly
-//       <Container>
-
-//           {/* <div style={{ height: '30vh', width: '100%'}}>
-//               <form>
-//                 <div>
-//                   <label>Current Location</label>
-//                   <input className="form-control" placeholder="Enter current location"/>
-//                 </div>
-//                 <br />
-//                 <div>
-//                   <label>Destination</label>
-//                   <input className="form-control" placeholder="Enter destination"/>
-//                 </div>
-//                 <br />
-//                   <button className="btn btn-primary" type="submit">Submit</button>
-//               </form>
-//             </div> */}
-            
-//           <div className= "gmap mx-auto"  style={{ height: '100vh', width: '100%', border: "solid black" }} >
-      
-      
-        
-//         <GoogleMapReact
-//           bootstrapURLKeys={{ key: "AIzaSyD9wlCcxU0_t4R2VfsyqXFnP4MkD2F44z0" }}
-//           defaultCenter={this.props.center}
-//           defaultZoom={this.props.zoom}
-//         >
-//           <AnyReactComponent
-//             lat={37.871853}
-//             lng={-122.258423}
-//             text= "Marker"
-//             src= {placeholder}
-//           />
-          
-//         </GoogleMapReact>
-//       </ div>
-
-//       </Container>
-      
-//     );
-   
-  
-//   }
-// }
-// export default SimpleMap;
-
-
-
-
-
-
-
-
-
 import React from 'react'
 import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
 import Autocomplete from 'react-google-autocomplete';
@@ -340,24 +251,7 @@ const AsyncMap = withScriptjs(
 let map;
  if( this.props.center.lat !== undefined ) {
   map = <div>
-   <div>
-   <div className="form-group">
-    <label htmlFor="">City</label>
-    <input type="text" name="city" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.city }/>
-   </div>
-   <div className="form-group">
-    <label htmlFor="">Area</label>
-    <input type="text" name="area" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.area }/>
-   </div>
-   <div className="form-group">
-    <label htmlFor="">State</label>
-    <input type="text" name="state" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.state }/>
-   </div>
-   <div className="form-group">
-    <label htmlFor="">Address</label>
-    <input type="text" name="address" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.address }/>
-   </div>
-   </div>
+
    <AsyncMap
    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9wlCcxU0_t4R2VfsyqXFnP4MkD2F44z0&libraries=places"
    loadingElement={
