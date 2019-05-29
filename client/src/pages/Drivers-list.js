@@ -7,7 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Consumer from "../context/configContext";
 import faker from "faker";
-import SimpleMap from "../components/Map/index.js";
+import Home from "../components/Map/map";
 
 
 class DriversList extends Component {
@@ -69,7 +69,7 @@ class DriversList extends Component {
                                         <h1>Drivers List</h1>
                                     </Jumbotron>
                                     <Row>
-                                        <SimpleMap />
+                                        <Home />
                                         {this.state.drivers.length ? (
                                             <List>
                                                 {this.state.drivers.map(driver => (
