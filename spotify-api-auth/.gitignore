@@ -1,1 +1,10 @@
 node_modules/
+.env
+.DS_Store
+
+#Spotify API keys
+SPOTIFY_ID=98a98b87dde444d38b07859acfba254b
+SPOTIFY_SECRET=d038c28cc6934cde8e209f674246e078
+
+#Google API keys
+CarpoolPal API key = AIzaSyD9wlCcxU0_t4R2VfsyqXFnP4MkD2F44z0

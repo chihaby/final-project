@@ -1,11 +1,10 @@
-
 import React from 'react'
 import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
 import Autocomplete from 'react-google-autocomplete';
 import Geocode from "react-geocode";
 require('dotenv').config();
-
 Geocode.enableDebug();
+
 class Map extends React.Component{
 constructor( props ){
  super( props );
@@ -184,10 +183,11 @@ const address = place.formatted_address,
  * @param event
  */
  onMarkerDragEnd = ( event ) => {
- console.log( 'event', event );
+  // console.log( 'event', event );
  let newLat = event.latLng.lat(),
   newLng = event.latLng.lng(),
   addressArray = [];
+  // console.log('newLat', newLat);
 Geocode.fromLatLng( newLat , newLng ).then(
   response => {
   const address = response.results[0].formatted_address,
@@ -254,7 +254,7 @@ let map;
   map = <div>
 
    <AsyncMap
-   googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9wlCcxU0_t4R2VfsyqXFnP4MkD2F44z0&libraries=places"
+   googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuC3PsPBwzVUE2jV9QvAoSvqPfNPPYvhM&libraries=places"
    loadingElement={
     <div style={{ height: `100%` }} />
    }
