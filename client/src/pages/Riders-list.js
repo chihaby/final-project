@@ -7,7 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Consumer from "../context/configContext";
 import faker from "faker";
-import SimpleMap from "../components/Map/index.js";
+import Home from "../components/Map/map";
 
 
 class RidersList extends Component {
@@ -69,8 +69,8 @@ class RidersList extends Component {
                                         <h1>Riders List</h1>
                                     </Jumbotron>
                                     <Row>
-                                       
-                                        <SimpleMap />
+                        
+                                        <Home />
                                     
                                         {this.state.riders.length ? (
                                             <List>
@@ -100,7 +100,7 @@ class RidersList extends Component {
                                 </Col>
                             </Row>
                             <Row>
-                                <p>Temporary Links</p> <br />
+                                {/* <p>Temporary Links</p> <br /> */}
                                 <Col size="md-2">
                                     <Link to="/">← Home</Link>
                                 </Col>

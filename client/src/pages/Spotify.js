@@ -37,12 +37,21 @@ class SpotifyNowPlaying extends Component {
     getNowPlaying() {
         spotifyWebApi.getMyCurrentPlaybackState()
             .then((response) => {
+                if (response) {
                 this.setState({
                     nowPlaying: {
                         name: response.item.name,
                         image: response.item.album.images[0].url
                     }
                 })
+            } else {
+                this.setState({
+                    nowPlaying: {
+                        name: "Nothing is playing",
+                        image:""
+                    }
+                })
+            }
             })
     }
 
@@ -64,15 +73,6 @@ class SpotifyNowPlaying extends Component {
                 <Row>
                     <List>
                         <ListItem>
-                            <div className="logIn w Spotify">
-                                <a href='http://localhost:8888'>
-                                    <button className="spotifyLogin">
-                                        Login With Spotify
-                                    </button>
-                                </a>
-                            </div>
-                        </ListItem>
-                        <ListItem>
                             <div>
                                 <button className="checkNowPlaying" onClick={() => this.getNowPlaying()} >
                                     Check Now Playing
@@ -90,7 +90,7 @@ class SpotifyNowPlaying extends Component {
                     </List>
                 </Row>
                 <Row>
-                    <p>Temporary Links</p> <br />
+                    {/* <p>Temporary Links</p> <br /> */}
                     <Col size="md-2">
                         <Link to="/">← Home</Link>
                     </Col>
