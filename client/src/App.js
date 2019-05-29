@@ -11,7 +11,8 @@ import DriverProfile from "./pages/Driver-profile";
 import RiderProfile from "./pages/Rider-profile";
 import { ConfigProvider } from "./context/configContext";
 import SpotifyNowPlaying from "./pages/Spotify";
-import About from "./pages/About"
+import About from "./pages/About";
+//import Chat from "./pages/Chat";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/spotify" component={SpotifyNowPlaying} />
             <Route exact path="/callback" component={SpotifyNowPlaying} />
             <Route exact path="/about" component={About} />
+            {/* <Route exact path= "/chat" component={Chat} /> */}
             <Route component={NoMatch} />
           </Switch>
         </div>
