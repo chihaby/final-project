@@ -32,7 +32,7 @@ function App() {
             <Route exact path="/spotify" component={SpotifyNowPlaying} />
             <Route exact path="/callback" component={SpotifyNowPlaying} />
             <Route exact path="/about" component={About} />
-            <Route exact path= "/chat" component={Chat} />
+            {/* <Route exact path= "/chat" component={Chat} /> */}
             <Route component={NoMatch} />
           </Switch>
         </div>
