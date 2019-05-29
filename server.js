@@ -48,7 +48,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/carpool-pal");
-app.get("/login", function(req, res) {
+app.get("/login", function (req, res) {
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
 
@@ -57,17 +57,17 @@ app.get("/login", function(req, res) {
     "user-read-recently-played user-read-private user-read-email user-read-playback-state user-top-read";
   res.redirect(
     "https://accounts.spotify.com/authorize?" +
-      querystring.stringify({
-        response_type: "code",
-        client_id,
-        scope,
-        redirect_uri,
-        state
-      })
+    querystring.stringify({
+      response_type: "code",
+      client_id,
+      scope,
+      redirect_uri,
+      state
+    })
   );
 });
 
-app.get("/callback", function(req, res) {
+app.get("/callback", function (req, res) {
   // your application requests refresh and access tokens
   // after checking the state parameter
 
@@ -78,9 +78,9 @@ app.get("/callback", function(req, res) {
   if (state === null || state !== storedState) {
     res.redirect(
       "/#" +
-        querystring.stringify({
-          error: "state_mismatch"
-        })
+      querystring.stringify({
+        error: "state_mismatch"
+      })
     );
   } else {
     res.clearCookie(stateKey);
@@ -101,7 +101,7 @@ app.get("/callback", function(req, res) {
       json: true
     };
 
-    request.post(authOptions, function(error, response, body) {
+    request.post(authOptions, function (error, response, body) {
       if (!error && response.statusCode === 200) {
         var access_token = body.access_token,
           refresh_token = body.refresh_token;
@@ -112,31 +112,31 @@ app.get("/callback", function(req, res) {
           json: true
         };
         // use the access token to access the Spotify Web API
-        request.get(options, function(error, response, body) {
+        request.get(options, function (error, response, body) {
           console.log('body', body);
         });
 
         // we can also pass the token to the browser to make requests from there
         res.redirect(
           `http://localhost:3000/spotify/#` +
-            querystring.stringify({
-              access_token: access_token,
-              refresh_token: refresh_token
-            })
+          querystring.stringify({
+            access_token: access_token,
+            refresh_token: refresh_token
+          })
         );
       } else {
         res.redirect(
           "/#" +
-            querystring.stringify({
-              error: "invalid_token"
-            })
+          querystring.stringify({
+            error: "invalid_token"
+          })
         );
       }
     });
   }
 });
 
-app.get("/refresh_token", function(req, res) {
+app.get("/refresh_token", function (req, res) {
   // requesting access token from refresh token
   var refresh_token = req.query.refresh_token;
   var authOptions = {
@@ -155,7 +155,7 @@ app.get("/refresh_token", function(req, res) {
     json: true
   };
 
-  request.post(authOptions, function(error, response, body) {
+  request.post(authOptions, function (error, response, body) {
     if (!error && response.statusCode === 200) {
       var access_token = body.access_token;
       res.send({
@@ -165,59 +165,6 @@ app.get("/refresh_token", function(req, res) {
   });
 });
 
-<<<<<<< HEAD
-=======
-//---------------------------------CHATKIT----------------------------
-require('dotenv').config({ path: '.env' });
-
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const Chatkit = require('@pusher/chatkit-server');
-
-const app = express();
-
-const chatkit = new Chatkit.default({
-  instanceLocator: process.env.CHATKIT_INSTANCE_LOCATOR,
-  key: process.env.CHATKIT_SECRET_KEY,
-});
-
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.post('/users', (req, res) => {
-  const { userId } = req.body;
-
-  chatkit
-    .createUser({
-      id: userId,
-      name: userId,
-    })
-    .then(() => {
-      res.sendStatus(201);
-    })
-    .catch(err => {
-      if (err.error === 'services/chatkit/user_already_exists') {
-        console.log(`User already exists: ${userId}`);
-        res.sendStatus(200);
-      } else {
-        res.status(err.status).json(err);
-      }
-    });
-});
-
-app.post('/authenticate', (req, res) => {
-  const authData = chatkit.authenticate({
-    userId: req.query.user_id,
-  });
-  res.status(authData.status).send(authData.body);
-});
-
-app.set('port', process.env.CHATPORT || 5200);
-const server = app.listen(app.get('port'), () => {
-  console.log(`Express running → PORT ${server.address().port}`);
-});
->>>>>>> 3e356506de233a1426a2792a11d193917ab63b1e
 
 app.use(routes);
 // Start the API server
