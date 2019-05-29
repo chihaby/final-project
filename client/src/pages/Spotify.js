@@ -5,6 +5,7 @@ import Jumbotron from "../components/Jumbotron";
 import { List, ListItem } from "../components/List"
 import Spotify from 'spotify-web-api-js';
 
+
 const spotifyWebApi = new Spotify();
 
 class SpotifyNowPlaying extends Component {
