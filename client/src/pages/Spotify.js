@@ -90,7 +90,7 @@ class SpotifyNowPlaying extends Component {
                     </List>
                 </Row>
                 <Row>
-                    <p>Temporary Links</p> <br />
+                    {/* <p>Temporary Links</p> <br /> */}
                     <Col size="md-2">
                         <Link to="/">← Home</Link>
                     </Col>
