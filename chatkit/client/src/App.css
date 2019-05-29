@@ -75,6 +75,8 @@ h4 {
   justify-content: center;
   flex-direction: column;
   border-bottom: 1px solid #ccc;
+  color: orange;
+  background-color: black;
 }
 
 .user-profile span {
@@ -134,8 +136,9 @@ h4 {
 }
 
 .chat-rooms .active {
-  background-color: #eee;
-  color: #181919;
+  background-color: rgb(58, 142, 170);
+  color: orange;
+
 }
 
 .chat-rooms li:hover {
@@ -151,6 +154,8 @@ h4 {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  color: black;
+  background-color: rgb(154, 220, 241);
 }
 
 .chat-header {
@@ -162,6 +167,8 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: orange;
+  background-color: black;
 }
 
 .chat-header h3 {
@@ -228,7 +235,7 @@ input[type="text"].message-input {
 
 .dialog {
   width: 500px;
-  background-color: white;
+  background-color: orange;
   display: flex;
   align-items:  center;
 }
