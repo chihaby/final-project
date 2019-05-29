@@ -1,6 +1,6 @@
-require('dotenv').config();
+const stuffhelp= require('dotenv').config();
 const express = require("express");
-
+console.log(stuffhelp)
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -13,6 +13,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = process.env.SPOTIFY_ID; // Your client id
 var client_secret = process.env.SPOTIFY_SECRET; // Your secret
+console.log(client_id, client_secret)
 var redirect_uri = 'http://localhost:3001/callback'; // Your redirect uri
 
 /**
@@ -95,7 +96,7 @@ app.get("/callback", function(req, res) {
         Authorization:
           "Basic " +
           new Buffer(
-            process.env.SPOTIFY_ID + ":" + process.env.SPOTIFY_SECRET
+            client_id + ":" + client_secret
           ).toString("base64")
       },
       json: true

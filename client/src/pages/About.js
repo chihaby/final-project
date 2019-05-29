@@ -14,7 +14,7 @@ function About() {
             </Col>
         </Row>
      
-            <h3>UDER CONSTRUCTION</h3><br/>
+            <h3>UNDER CONSTRUCTION</h3><br/>
             <h4>TARGET</h4>
             <p>This application will target current casual carpool users in the Bay Area. Currently the casual carpool community utilizes predetermined pick-up spots where both drivers and riders meet and without previous knowledge of each other. 
                 We have identified an opportunity to provide both drivers and riders of the casual carpool a chance to determine who they ride with prior to their pick-up times.</p>
@@ -31,7 +31,7 @@ function About() {
             <p>Spotify, Google Maps, Axios, React, Node.Js<br/>
                 Still in the works</p>        
         <Row>
-            <p>Temporary Links</p><br/>
+            {/* <p>Temporary Links</p><br/> */}
             <Col size="md-2">
             <Link to="/">← Home</Link>
             </Col>
