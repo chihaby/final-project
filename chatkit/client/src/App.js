@@ -8,7 +8,7 @@ import {
   connectToRoom,
   sendMessage,
   sendDM,
-} from './methods';
+} from './Methods';
 import Dialog from './components/Dialog';
 import RoomList from './components/RoomList';
 import ChatSession from './components/ChatSession';
