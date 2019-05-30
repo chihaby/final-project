@@ -166,7 +166,10 @@ app.get("/refresh_token", function (req, res) {
   });
 });
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4836a3307afe9b5fbb4b9eee1d637bae6152bd7f
 app.use(routes);
 // Start the API server
 app.listen(PORT, function () {
