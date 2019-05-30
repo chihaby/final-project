@@ -1,9 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap');
+
+
+body {
+    font-family: 'Baloo Chettan', cursive;
+    
+}
+
+h1 {
+    font-family: 'Baloo Chettan', cursive;
+  }
+
+
+
 .map {
     align-content: center;
     margin-left: -50px;
+    font-family: 'Baloo Chettan', cursive;
+
 }
 .gmap {
     margin: auto;
     border-radius: 10px;
     background-color: white;
+    font-family: 'Baloo Chettan', cursive;
 }
+

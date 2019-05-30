@@ -1,11 +1,15 @@
-
 import React from 'react'
 import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
 import Autocomplete from 'react-google-autocomplete';
 import Geocode from "react-geocode";
-require('dotenv').config();
+import './style.css'
 
+
+Geocode.setApiKey("AIzaSyCuC3PsPBwzVUE2jV9QvAoSvqPfNPPYvhM");
+require('dotenv').config();
 Geocode.enableDebug();
+
+
 class Map extends React.Component{
 constructor( props ){
  super( props );
@@ -184,10 +188,11 @@ const address = place.formatted_address,
  * @param event
  */
  onMarkerDragEnd = ( event ) => {
- console.log( 'event', event );
+  // console.log( 'event', event );
  let newLat = event.latLng.lat(),
   newLng = event.latLng.lng(),
   addressArray = [];
+  // console.log('newLat', newLat);
 Geocode.fromLatLng( newLat , newLng ).then(
   response => {
   const address = response.results[0].formatted_address,
@@ -250,28 +255,12 @@ const AsyncMap = withScriptjs(
   )
  );
 let map;
+
  if( this.props.center.lat !== undefined ) {
   map = <div>
-   <div>
-   <div className="form-group">
-    <label htmlFor="">City</label>
-    <input type="text" name="city" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.city }/>
-   </div>
-   <div className="form-group">
-    <label htmlFor="">Area</label>
-    <input type="text" name="area" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.area }/>
-   </div>
-   <div className="form-group">
-    <label htmlFor="">State</label>
-    <input type="text" name="state" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.state }/>
-   </div>
-   <div className="form-group">
-    <label htmlFor="">Address</label>
-    <input type="text" name="address" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.address }/>
-   </div>
-   </div>
+
    <AsyncMap
-   googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9wlCcxU0_t4R2VfsyqXFnP4MkD2F44z0&libraries=places"
+   googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuC3PsPBwzVUE2jV9QvAoSvqPfNPPYvhM&libraries=places"
    loadingElement={
     <div style={{ height: `100%` }} />
    }

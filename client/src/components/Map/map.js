@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Map from './index'
+import './style.css'
 class Home extends Component {
 
 	render() {
