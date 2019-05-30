@@ -63,11 +63,11 @@ class SpotifyNowPlaying extends Component {
                     <Col size="md-12">
                         <Jumbotron>
                             <h1>Spotify </h1>
-                            <h1>
+                            {/* <h1>
                                 <span role="img" aria-label="music">
                                     📻
                             </span>
-                            </h1>
+                            </h1> */}
                         </Jumbotron>
                     </Col>
                 </Row>
