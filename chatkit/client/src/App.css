@@ -1,12 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap');
-
-body { 
-  /* background: #fc4a1a; 
-  background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a); 
-  background: linear-gradient(to right, #f7b733, #fc4a1a);  */
-  background: #f7b733;
-} 
-
 .App {
   text-align: center;
 }
@@ -84,9 +75,8 @@ h4 {
   justify-content: center;
   flex-direction: column;
   border-bottom: 1px solid #ccc;
-  color: black;
-  background-color: #f7b733;
-  /* font-family: 'Baloo Chettan', cursive; */
+  color: orange;
+  background-color: black;
 }
 
 .user-profile span {
@@ -107,8 +97,6 @@ h4 {
   cursor: pointer;
   border-bottom: 1px solid #eee;
   margin-bottom: 0;
-  background-color: #f7b733;
-  /* font-family: 'Baloo Chettan', cursive; */
 }
 
 .room-member {
@@ -149,7 +137,7 @@ h4 {
 
 .chat-rooms .active {
   background-color: rgb(58, 142, 170);
-  color: #f7b733;
+  color: orange;
 
 }
 
@@ -165,7 +153,7 @@ h4 {
 .chat-screen {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   color: black;
   background-color: rgb(154, 220, 241);
 }
@@ -179,9 +167,8 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: black;
-  background-color: #f7b733;
-  font-family: 'Baloo Chettan', cursive;
+  color: orange;
+  background-color: black;
 }
 
 .chat-header h3 {
@@ -248,7 +235,7 @@ input[type="text"].message-input {
 
 .dialog {
   width: 500px;
-  background-color: #f7b733;
+  background-color: orange;
   display: flex;
   align-items:  center;
 }
