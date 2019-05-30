@@ -12,6 +12,8 @@ import RiderProfile from "./pages/Rider-profile";
 import { ConfigProvider } from "./context/configContext";
 import SpotifyNowPlaying from "./pages/Spotify";
 import About from "./pages/About";
+
+
 //import Chat from "./pages/Chat";
 
 
