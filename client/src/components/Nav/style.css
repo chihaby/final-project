@@ -23,10 +23,12 @@ h1 {
 
     font-size: 25px;
 
+    font-family: 'Baloo Chettan', cursive;
+
 } 
 
 .navbar-brand {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Baloo Chettan', cursive;
     text-align: center
 }
 
