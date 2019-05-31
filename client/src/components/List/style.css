@@ -110,6 +110,14 @@ i {
   margin-left: 30%;
 }
 
+.checkMyCurrentPlayLists{
+  color: orange;
+  background-color: black;
+  text-align: center;
+  margin-left: 30%;
+}
+
+
 .nowPlayingTitle {
   text-align: center;
 }
