@@ -5,7 +5,7 @@
 
 
 ## Demo :video_camera:
-![](https://drive.google.com/file/d/15mUDqkBT2GLElZaBIQ3qiULQcK7T2mKK/view)
+![](ezgif.com-video-to-gif.gif)
 
 
 
@@ -24,13 +24,13 @@
 7. `cd ..`
 8. `npm start`
 
-## **TO GET CHATKIT RUNING**
-1. 'cd into chatkit'
-2. 'npm install'
-3. 'Open client/src/methods.js, and .env and update them with your Chatkit credentials'
-4. 'Run node server.js to start the Express server'
-5. 'cd into the client folder'
-6. 'run npm install followed by npm start to start the development server'.
+**TO GET CHATKIT RUNING**
+1. `cd into chatkit`
+2. `npm install`
+3. Open client/src/methods.js, and .env and update them with your Chatkit credentials
+4. `Run node server.js` to start the Express server
+5. `cd into the client folder`
+6. `run npm install` followed by `npm start` to start the development server
 
 
 ## Built With :zap:
