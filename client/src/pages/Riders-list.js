@@ -98,30 +98,6 @@ class RidersList extends Component {
                                     </Row>
                                 </Col>
                             </Row>
-                            <Row>
-                                {/* <p>Temporary Links</p> <br /> */}
-                                <Col size="md-2">
-                                    <Link to="/">← Home</Link>
-                                </Col>
-                                <Col size="md-2">
-                                    <Link to="/drivers">← Drivers-Form</Link>
-                                </Col>
-                                <Col size="md-2">
-                                    <Link to="/riders">← Riders-Form</Link>
-                                </Col>
-                                <Col size="md-2">
-                                    <Link to="/driversList">← Drivers-List</Link>
-                                </Col>
-                                <Col size="md-2">
-                                    <Link to="/ridersList">← Riders-List</Link>
-                                </Col>
-                                <Col size="md-2">
-                                    <Link to="/about">← About</Link>
-                                </Col>
-                                <Col size="md-2">
-                                    <Link to="/chat">← Chat</Link>
-                                </Col>
-                            </Row>
                         </Container>
                     )
                 }

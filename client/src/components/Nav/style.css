@@ -14,12 +14,33 @@ h1 {
 
 
 .navbar {
-    font-family: 'Baloo Chettan', cursive;
-    background: #fc4a1a;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background: #141414;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #111111, #181818);   */
+    background: linear-gradient(to right, #2c2c2c, #020202); 
+
     text-align: center;
 
     font-size: 25px;
 
 } 
+
+.navbar-brand {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center
+}
+
+.mr-auto {
+    margin-right: 0 !important;
+}
+.navbar-nav {         
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;  
+     
+} 
+span {
+    margin: 10px;
+    
+}
+
+
