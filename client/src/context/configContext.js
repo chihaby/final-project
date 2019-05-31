@@ -87,10 +87,3 @@ class ConfigProvider extends Component {
 export { ConfigProvider };
 export default Consumer;
 
-// const secretKey = "16c33a19-8c76-4500-a6a4-93c7b03b6986:SB4c97zguxskUGlXvP4Np6b5aX/ybRAvbgH7Wv3S/9E="
-
-// const testToken = "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/9e14975c-602d-4718-8bad-ca97925e559a/token";
-
-// const instanceLocator = "v1:us1:9e14975c-602d-4718-8bad-ca97925e559a";
-
-// export { secretKey, testToken, instanceLocator };

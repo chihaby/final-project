@@ -109,6 +109,10 @@ app.get("/callback", function (req, res) {
 
         var options = {
           url: "https://api.spotify.com/v1/me",
+          // "https://api.spotify.com	/v1/me/playlists"
+          // "https://api.spotify.com/v1/playlists/{playlist_id}/tracks"
+
+          
           headers: { Authorization: "Bearer " + access_token },
           json: true
         };
@@ -165,7 +169,6 @@ app.get("/refresh_token", function (req, res) {
     }
   });
 });
-
 
 app.use(routes);
 // Start the API server
