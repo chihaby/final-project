@@ -205,7 +205,15 @@ this.setState( {
    address: ( address ) ? address : '',
    area: ( area ) ? area : '',
    city: ( city ) ? city : '',
-   state: ( state ) ? state : ''
+   state: ( state ) ? state : '',
+   markerPosition: {
+     lat: newLat,
+     lng: newLng
+   },
+   mapPosition: {
+     lat: newLat,
+     lng: newLng
+   }
   } )
   },
   error => {
