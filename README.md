@@ -13,7 +13,7 @@
 **TECHNOLOGIES</H3>**
  Google Maps, Axios, Spotify, REST API, React.JS, Node.JS, 
 
- 
+
 ## Installation Instructions :wrench:
 
 1. Clone the repo using `git clone https://github.com/chihaby/final-project.git`
@@ -24,7 +24,7 @@
 7. `cd ..`
 8. `npm start`
 
-**TO GET CHATKIT RUNING**
+## **TO GET CHATKIT RUNING**
 1. 'cd into chatkit'
 2. 'npm install'
 3. 'Open client/src/methods.js, and .env and update them with your Chatkit credentials'
