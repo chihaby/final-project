@@ -170,8 +170,6 @@ app.get("/refresh_token", function (req, res) {
   });
 });
 
-
-
 app.use(routes);
 // Start the API server
 app.listen(PORT, function () {
