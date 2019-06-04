@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap');
+
 .form-group {    
     background: #fc4a1a;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
@@ -8,6 +10,7 @@
     border-radius: 10px;
     background-color: #9bdefd;
     text-align: left;
+    font-family: 'Baloo Chettan', cursive;
 }
 
 .form-control:hover {

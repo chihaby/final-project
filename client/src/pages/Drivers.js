@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
+
 class Drivers extends Component {
     state = {
         drivers: [],
@@ -82,6 +83,7 @@ class Drivers extends Component {
                                 name="destination"
                                 placeholder="Destination"
                             />
+                            
                             <FormBtn
                                 disabled={!(this.state.firstName && this.state.lastName)}
                                 onClick={this.handleFormSubmit}
@@ -89,27 +91,6 @@ class Drivers extends Component {
                                 Submit Driver Form
                             </FormBtn>
                         </form>
-                    </Col>
-                </Row>
-                <Row>
-                    <p>Temporary Links</p> <br />
-                    <Col size="md-2">
-                        <Link to="/">← Home</Link>
-                    </Col>
-                    <Col size="md-2">
-                        <Link to="/drivers">← Drivers-Form</Link>
-                    </Col>
-                    <Col size="md-2">
-                        <Link to="/riders">← Riders-Form</Link>
-                    </Col>
-                    <Col size="md-2">
-                        <Link to="/driversList">← Drivers-List</Link>
-                    </Col>
-                    <Col size="md-2">
-                        <Link to="/ridersList">← Riders-List</Link>
-                    </Col>
-                    <Col size="md-2">
-                        <Link to="/about">← About</Link>
                     </Col>
                 </Row>
             </Container>

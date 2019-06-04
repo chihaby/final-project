@@ -1,4 +1,4 @@
-import React, {Component, createContext} from 'react';
+import React, { Component, createContext } from 'react';
 // Provider and Consumer are connected through their "parent" context
 const { Provider, Consumer } = createContext();
 
@@ -10,7 +10,7 @@ class ConfigProvider extends Component {
             incrementLikes: (id) => {
                 const driver = (this.state.library.drivers.find(search => search.id === id)) ? this.state.library.drivers.findIndex(search => search.id === id) : null;
                 if (driver === null) {
-                    const {drivers} = this.state.library;
+                    const { drivers } = this.state.library;
                     drivers.push({
                         id,
                         likes: 1
@@ -42,7 +42,7 @@ class ConfigProvider extends Component {
             incrementLikes: (id) => {
                 const rider = (this.state.ridersLibrary.riders.find(search => search.id === id)) ? this.state.ridersLibrary.riders.findIndex(search => search.id === id) : null;
                 if (rider === null) {
-                    const {riders} = this.state.ridersLibrary;
+                    const { riders } = this.state.ridersLibrary;
                     riders.push({
                         id,
                         likes: 1
@@ -68,7 +68,6 @@ class ConfigProvider extends Component {
                 }
             }
         }
-        //faedata insert
     };
 
     render() {
@@ -86,5 +85,5 @@ class ConfigProvider extends Component {
 }
 
 export { ConfigProvider };
-
 export default Consumer;
+

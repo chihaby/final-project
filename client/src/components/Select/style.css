@@ -1,14 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap');
+
 .wrapper {    
-    background: #fc4a1a;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #020000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #81817f,#020000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #81817f, #020000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
     font-size: 40px;   
     height: 100%;
     width: 100%;
     text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 900;
+    font-family: 'Baloo Chettan', cursive;    font-weight: 900;
     padding-top: 200px;
     padding-bottom: 200px;
 }

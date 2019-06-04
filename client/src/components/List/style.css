@@ -12,6 +12,7 @@
 
 .list-overflow-container ul {
   margin: 0;
+  
 }
 
 .list-overflow-container li {
@@ -44,7 +45,7 @@
 
 .list-group-item {
   background-color:#6ce9ff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Baloo Chettan', cursive; 
   font-style: initial;
   font-size: 20px;
   margin-bottom: 20px;
@@ -108,6 +109,15 @@ i {
   text-align: center;
   margin-left: 30%;
 }
+
+.checkMyCurrentPlayLists{
+  color: orange;
+  background-color: black;
+  text-align: center;
+  margin-left: 30%;
+  font-family: 'Baloo Chettan', cursive; 
+}
+
 
 .nowPlayingTitle {
   text-align: center;

@@ -1,14 +1,13 @@
-import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import Consumer from "../context/configContext";
-import faker from "faker";
-import SimpleMap from "../components/Map/index.js";
-
+import React, { Component } from "react"
+import DeleteBtn from "../components/DeleteBtn"
+import Jumbotron from "../components/Jumbotron"
+import API from "../utils/API"
+import { Link } from "react-router-dom"
+import { Col, Row, Container } from "../components/Grid"
+import { List, ListItem } from "../components/List"
+import Consumer from "../context/configContext"
+import faker from "faker"
+import Home from "../components/Map/map"
 
 class RidersList extends Component {
     state = {
@@ -69,9 +68,9 @@ class RidersList extends Component {
                                         <h1>Riders List</h1>
                                     </Jumbotron>
                                     <Row>
-                                       
-                                        <SimpleMap />
-                                    
+
+                                        <Home />
+
                                         {this.state.riders.length ? (
                                             <List>
                                                 {this.state.riders.map(rider => (
@@ -97,27 +96,6 @@ class RidersList extends Component {
                                                 <h3>No Results to Display</h3>
                                             )}
                                     </Row>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <p>Temporary Links</p> <br />
-                                <Col size="md-2">
-                                    <Link to="/">← Home</Link>
-                                </Col>
-                                <Col size="md-2">
-                                    <Link to="/drivers">← Drivers-Form</Link>
-                                </Col>
-                                <Col size="md-2">
-                                    <Link to="/riders">← Riders-Form</Link>
-                                </Col>
-                                <Col size="md-2">
-                                    <Link to="/driversList">← Drivers-List</Link>
-                                </Col>
-                                <Col size="md-2">
-                                    <Link to="/ridersList">← Riders-List</Link>
-                                </Col>
-                                <Col size="md-2">
-                                    <Link to="/about">← About</Link>
                                 </Col>
                             </Row>
                         </Container>
