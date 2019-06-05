@@ -13,23 +13,8 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-<<<<<<< HEAD
-<<<<<<< HEAD:authorization_code/app.js
-<<<<<<< HEAD
-var client_id = '67aab91c3e5f4ab69362f7551bebfe7b'; // Your client id
-var client_secret = '4cfd043dddd44c48a72d7b2a9892040a'; // Your secret
-=======
-var client_id = process.env.SPOTIFY_ID; // Your client id
-var client_secret = process.env.SPOTIFY_SECRET // Your secret
->>>>>>> 4f12573b3fff9cb559d381fb58813f411182df64
-=======
-var client_id = '67aab91c3e5f4ab69362f7551bebfe7b'; // Your client id
-var client_secret = '4cfd043dddd44c48a72d7b2a9892040a'; // Your secret
->>>>>>> b97b483b3a4c4b6f28afbdeec0ab56a17b10647d:spotify-api-auth/authorization_code/app.js
-=======
 var client_id = process.env.SPOTIFY_ID; // Your client id
 var client_secret = process.env.SPOTIFY_SECRET; // Your secret
->>>>>>> afa18e2cab5bfca4ea6288191960519975424a33
 var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
 /**
@@ -119,11 +104,9 @@ app.get('/callback', function (req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-<<<<<<< HEAD:authorization_code/app.js
-        res.redirect('http://localhost:3000/' +
-=======
-        res.redirect('http://localhost:3000/spotify/#' +
->>>>>>> b97b483b3a4c4b6f28afbdeec0ab56a17b10647d:spotify-api-auth/authorization_code/app.js
+
+          res.redirect('http://localhost:3000/spotify/#' +
+          b97b483b3a4c4b6f28afbdeec0ab56a17b10647d:spotify-api-auth/authorization_code/app.js
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
