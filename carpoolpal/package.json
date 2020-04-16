@@ -1,0 +1,31 @@
+{
+    "name": "final-project",
+    "version": "1.0.0",
+    "description": "## Description :clipboard: **We all can agree that everyone is just trying to get somewhere. Now with CARPOOL PAL you can get to where you need to go with a little more knowledge of who you're going with AND the flexibility of choosing who to ride with. Whether you are going to SF Mon-Fri from the East Bay or need a ride to Southern California from the Bay Area, you can ride with a little more assurance. CARPOOL PAL allows drivers to cruise through the carpool lane while giving riders rides to where they need to go. With drivers having their own profiles that can also be linked to their Spotify, riding with strangers is becoming a little less strange. </H3>**",
+    "main": "server.js",
+    "dependencies": {
+      "json": "^9.0.6",
+      "package-lock.json": "^1.0.0",
+      "package.json": "^2.0.1",
+      "pkg": "^4.4.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+ssh://git@github.com/kaibili01/carpoolpal.git"
+    },
+    "keywords": [
+      "carpoolpal"
+    ],
+    "author": "adan'",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/kaibili01/carpoolpal/issues"
+    },
+    "homepage": "https://github.com/kaibili01/carpoolpal#readme"
+  }
+  

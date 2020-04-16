@@ -1,43 +1,37 @@
 {
-  "name": "mern",
+  "name": "final-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Description :clipboard: **We all can agree that everyone is just trying to get somewhere. Now with CARPOOL PAL you can get to where you need to go with a little more knowledge of who you're going with AND the flexibility of choosing who to ride with. Whether you are going to SF Mon-Fri from the East Bay or need a ride to Southern California from the Bay Area, you can ride with a little more assurance. CARPOOL PAL allows drivers to cruise through the carpool lane while giving riders rides to where they need to go. With drivers having their own profiles that can also be linked to their Spotify, riding with strangers is becoming a little less strange. </H3>**",
   "main": "server.js",
-  "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^4.1.0",
-    "google-map-react": "^1.1.4",
-    "nodemon": "^1.18.7"
-  },
   "dependencies": {
-    "@material-ui/core": "^3.9.3",
-    "@pusher/chatkit-client": "^1.5.0",
-    "@pusher/chatkit-server": "^1.1.0",
-    "axios": "^0.18.0",
     "cookie": "^0.4.0",
-    "cookie-parser": "^1.4.4",
-    "cookieparser": "^0.1.0",
     "cors": "^2.8.5",
-    "dotenv": "^8.0.0",
-    "express": "^4.16.4",
-    "faker": "^4.1.0",
-    "google-map-react": "^1.1.4",
-    "if-env": "^1.0.4",
-    "mongoose": "^5.5.6",
+    "express": "^4.17.1",
+    "json": "^9.0.6",
+    "mongoose": "^5.9.9",
+    "package-lock.json": "^1.0.0",
+    "package.json": "^2.0.1",
     "parser": "^0.1.4",
-    "querystring": "^0.2.0",
-    "react-google-maps": "^9.4.5",
-    "request": "^2.88.0"
-  }
+    "pkg": "^4.4.7"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kaibili01/carpoolpal.git"
+  },
+  "keywords": [
+    "carpoolpal"
+  ],
+  "author": "adan'",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaibili01/carpoolpal/issues"
+  },
+  "homepage": "https://github.com/kaibili01/carpoolpal#readme"
 }
